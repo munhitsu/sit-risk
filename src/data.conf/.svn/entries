@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="10"
+   name=""
+   committed-date="2005-01-13T23:13:47.048303Z"
+   url="http://koty.homeip.net/svn/mgr/jim/data.conf"
+   last-author="beda"
+   kind="dir"
+   revision="52"/>
+<entry
+   committed-rev="10"
+   name="pola-uzycie.xml"
+   text-time="2004-09-18T11:36:03.718750Z"
+   committed-date="2005-01-13T23:13:47.048303Z"
+   checksum="baa2bf2d9ed630e97f5be52a1ff1c7cd"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="10"
+   name="grupy.xml"
+   text-time="2004-09-20T19:34:32.640625Z"
+   committed-date="2005-01-13T23:13:47.048303Z"
+   checksum="e530e1d89d8411bcce60cbebb479aa64"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="10"
+   name="pola-edited.xml"
+   text-time="2004-09-19T15:49:09.703125Z"
+   committed-date="2005-01-13T23:13:47.048303Z"
+   checksum="73fa9dca518078371ede11b69fcbb7d0"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="10"
+   name="dane-podzial.xml"
+   text-time="2004-01-11T23:32:34.000000Z"
+   committed-date="2005-01-13T23:13:47.048303Z"
+   checksum="da35cded44f8464e6be19cd872bf8531"
+   last-author="beda"
+   kind="file"/>
+</wc-entries>

@@ -1,0 +1,114 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--conformance/xpath20
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: XPath 2.0 conformance</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: XPath 2.0 conformance">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>XPath 2.0 conformance</h1>
+      
+      
+      <p>This release of Saxon implements
+         the full XPath 2.0 grammar as defined in the working draft of 12 November 2003, 
+         with changes to operator precedences agreed subsequently in response to public comments.
+      </p> 
+      
+      
+      <p>The known restrictions in XPath 2.0 support include the following:</p>
+      
+      
+      <ul>
+         
+         
+         <li>
+            <p>Saxon supports all the built-in data types with the exception of xs:NOTATION.</p>
+         </li>
+         
+         
+         <li>
+            <p>Casting of a string to a QName is not supported, except when an explicit
+               cast or constructor function is used in an XSLT environment.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The state of implementation of all the standard functions is as described in
+               <a class="bodylink" href="javascript:topage('functions', 'intro')">functions.html</a></p>
+         </li> 
+         
+         
+         <li>
+            <p>Support for the type <code>xs:duration</code> goes beyond what the specification allows.
+               Ordering is implemented as a total order over all durations, based on the average length of a month
+               (one year = 365.242199 days).
+            </p> 
+         </li>
+         
+         
+         <li>
+            <p>The error codes defined in the specification are not used.</p>
+         </li>
+         
+         
+         <li>
+            <p>The construct <code>document-node(element(N, T))</code> is not supported within
+               an <code>AxisStep</code></p>
+         </li>
+         
+         
+         <li>
+            <p>In the construct <code>element(N, T)</code> or <code>element(*, T)</code> the optional
+               question mark after the type name (previously the keyword "nillable") is not supported.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The construct <code>SchemaContextPath</code> is not implemented. <i>In fact, the
+                  working groups have decided to remove this construct.</i></p>
+         </li> 
+         
+      </ul>
+      
+      
+      <p>The syntax for SequenceTypes incorporates some changes agreed by the W3C Working Groups but
+         not yet published. Specifically, <code>element(N)</code> matches any element named N whether or not 
+         N is declared in a schema; <code>element(*)</code> matches any element; <code>element(N, T)</code>
+         matches any element named N whose type annotation is T, where T is a simple or global type defined in
+         a schema, or a built-in type; <code>schema-element(N)</code> matches an element
+         whose name is N, or a name in the substitution group of N, where N is a global element declaration 
+         in the schema, and whose type matches the type of this global element. And similarly for attributes.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="xpath20.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="xquery.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

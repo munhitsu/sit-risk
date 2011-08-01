@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="11"
+   name=""
+   committed-date="2005-01-13T23:14:42.998742Z"
+   url="http://koty.homeip.net/svn/mgr/jim/bin"
+   last-author="beda"
+   kind="dir"
+   revision="52"/>
+<entry
+   committed-rev="11"
+   name="dane.xslt"
+   text-time="2004-09-19T21:47:52.515625Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="7e95df7d8b8a8c4733895ed883ec691d"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="pola-limit.xslt"
+   text-time="2004-09-19T20:33:07.375000Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="f68679e6de2459bb413276258ed5faab"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="dane2statistica-htm.xslt"
+   text-time="2003-10-13T10:17:24.343750Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="dba0f27c3df1a4e6b9dcda85a4964dba"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="pola-merge.xslt"
+   text-time="2004-09-18T16:07:21.437500Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="19ba88046d03efe0014b75abd0664c12"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="xhtml2csv.pl"
+   text-time="2003-10-10T22:56:46.062500Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="a8a0fcdd0d600ab91941327aed4c700e"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="pola2xml.pl"
+   text-time="2004-01-11T23:26:44.000000Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="eb38fe2bdb1a7766df18f9b6c69c6e43"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="dane2html.pl"
+   text-time="2004-09-19T21:50:34.265625Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="127d91680db6407a129c26a58468b586"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="pola-tabela.xslt"
+   text-time="2004-09-20T20:06:16.937500Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="61c9ee2ce56ae05d2870c9099e7e1809"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="wykres.xslt"
+   text-time="2004-03-08T22:06:08.000000Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="c484fec35c6a553b7451933009491a7b"
+   last-author="beda"
+   kind="file"/>
+<entry
+   committed-rev="11"
+   name="dane-mod.xslt"
+   text-time="2004-02-24T21:16:08.000000Z"
+   committed-date="2005-01-13T23:14:42.998742Z"
+   checksum="1ef2cfc6e7303587459bb9f09e06a235"
+   last-author="beda"
+   kind="file"/>
+</wc-entries>

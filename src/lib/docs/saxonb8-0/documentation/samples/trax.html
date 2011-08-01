@@ -1,0 +1,75 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--samples/trax
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: JAXP 1.2 examples</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: JAXP 1.2 examples">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>JAXP 1.2 examples</h1>
+      
+      
+      <p>Saxon supports the Java JAXP 1.2 API, also known as TrAX (package javax.xml.transform)
+         for invoking the stylesheet processor.
+         This API is useful when you want to write your own Java applications that invoke Saxon.
+      </p>
+      
+      
+      <p>A sample program that illustrates many features of the TrAX interface is included in
+         the distribution as <b>TraxExamples.java</b>. Source XML and XSLT files for use with this
+         program are included in the <b>trax</b> directory. To run the program, use the command:
+      </p>
+      
+      
+      <p class="command">
+         cd $saxonhome/samples/trax<br>
+         java TraxExamples 
+         
+      </p>
+      
+      
+      <p>You can supply an argument to indicate which of the examples you want to run; see the source
+         code for details. By default, they are all executed in turn.
+      </p>
+      
+      
+      <p>One of the examples shows how to use TrAX to process input from a third-party (non-Saxon)
+         DOM document, and how to
+         send output to a third-party DOM document. This example tests to see if either Crimson or
+         Xerces is present on the classpath; if not, it should fail cleanly. You will need to change the
+         source code and recompile if you want to
+         use it with a different DOM implementation.
+      </p>
+      
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="trax.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="servlet.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

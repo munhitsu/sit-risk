@@ -1,0 +1,435 @@
+Numer porzadkowy
+Grupa/kontrola
+Grupa pacjent¢w
+Podzial na 4 grupy
+Plec
+Wiek (w latach)
+Miesiac urodzenia
+Rozpoznanie
+Natezenie astmy (rozpoznanie
+Na co pierwsze chorowal
+W1 Czas choroby do IT (sk¢ra)
+W1 Czas choroby do IT (nos)
+W1 Czas choroby do IT (astma)
+W1 Obciazajacy wywiad rodzinny
+Obciazenie rodzinne
+W1 Dlugosc choroby przed IT
+W1 Phadiatop
+W1 Leukocytoza
+W1 Eozynofilia
+W1 Eozynofilia bezw.
+W1 ECP
+W1 Liczba p¢l naplywowych
+W1 Liczba p¢l nablonkowych
+W1 Neutrofile
+W1 Eozynofile
+W1 Eozynofile zdegranulowane
+W1 Limfocyty
+W1 Kom¢rki kubkowe
+W1 Kom¢rki przypodstawne
+W1 Spos¢b zluszczania
+W1 FEV
+W1 FEF 5-75
+W1 PEFR
+W1 Procent zmiennosci po beta
+W1 Poprawa (kodowana)
+W1 R¢znica miedzy objawami
+W2 Swiszczacy oddech
+W2 Kaszel
+W2 Dusznosc
+W2 Swiad spojowek
+W2 Lzawienie oczu
+W2 Wyciek z nosa
+W2 Zatkanie nosa
+W2 Napady kichania
+W2 Wysypki skorne
+W2 Czestosc infekcji (w roku)
+W2 Hospitalizacja    (w tyg.)
+W2 Antyhistaminiki
+W2 Metyloksantyny
+W2 Sterydy (og¢lnie)
+W2 Sterydy (wziewnie)
+W2 Sterydy (donosowo)
+W2 Kromoglikany (wziewnie)
+W2 Kromoglikany (donosowo)
+W2 Kromoglikany (dospoj¢wkowo)
+W2 Beta-mimetyki
+W2 Betadrin miejscowo
+W2 Ig E (calkowite)
+W2 Ig E (swoiste trawy)
+W2 Ig E (swoiste trawy) klasa
+W2 Leukocytoza
+W2 Eozynofilia
+W2 Eozynofilia bezw.
+W2 ECP
+W2 Liczba p¢l naplywowych
+W2 Liczba p¢l nablonkowych
+W2 Neutrofile
+W2 Eozynofile
+W2 Eozynofile zdegranulowane
+W2 Limfocyty
+W2 Kom¢rki kubkowe
+W2 Kom¢rki przypodstawne
+W2 Spos¢b zluszczania
+W2 FEV
+W2 FEF 5-75
+W2 PEFR
+W2 Procent zmiennosci po beta
+W2 Max. stezenie szczepionki
+W2 Dawka szczepionki
+W2 Reakcje poszczepienne
+W2 Czas trwania objaw¢w
+W2 Czas trwania max objaw¢w
+W3 Swiszczacy oddech
+W3 Kaszel
+W3 Dusznosc
+W3 Swiad spojowek
+W3 Lzawienie oczu
+W3 Wyciek z nosa
+W3 Zatkanie nosa
+W3 Napady kichania
+W3 Wysypki skorne
+W3 Czestosc infekcji (w roku)
+W3 Antyhistaminiki
+W3 Metyloksantyny
+W3 Sterydy (og¢lnie)
+W3 Sterydy (wziewnie)
+W3 Sterydy (donosowo)
+W3 Kromoglikany (wziewnie)
+W3 Kromoglikany (donosowo)
+W3 Kromoglikany (dospoj¢wkowo)
+W3 Beta-mimetyki
+W3 Betadrin miejscowo
+W3 Leukocytoza
+W3 Eozynofilia
+W3 Eozynofilia bezw.
+W3 ECP
+W3 Liczba p¢l naplywowych
+W3 Liczba p¢l nablonkowych
+W3 Neutrofile
+W3 Eozynofile
+W3 Eozynofile zdegranulowane
+W3 Limfocyty
+W3 Kom¢rki kubkowe
+W3 Kom¢rki przypodstawne
+W3 Spos¢b zluszczania
+W3 FEV
+W3 FEF 5-75
+W3 PEFR
+W3 Procent zmiennosci po beta
+W3 Max. stezenie szczepionki
+W3 Dawka szczepionki
+W3 Reakcje poszczepienne
+W3 Czas trwania objaw¢w
+W3 Czas trwania max objaw¢w
+W4 Swiszczacy oddech
+W4 Kaszel
+W4 Dusznosc
+W4 Swiad spojowek
+W4 Lzawienie oczu
+W4 Wyciek z nosa
+W4 Zatkanie nosa
+W4 Napady kichania
+W4 Wysypki skorne
+W4 Czestosc infekcji (w roku)
+W4 Hospitalizacja (tyg)
+W4 Antyhistaminiki
+W4 Metyloksantyny
+W4 Sterydy (og¢lnie)
+W4 Sterydy (wziewnie)
+W4 Sterydy (donosowo)
+W4 Kromoglikany (wziewnie)
+W4 Kromoglikany (donosowo)
+W4 Kromoglikany (dospoj¢wkowo)
+W4 Beta-mimetyki
+W4 Betadrin miejscowo
+W4 Ig E (calkowite)
+W4 Ig E (swoiste trawy)
+W4 Ig E (swoiste trawy) klasa
+W4 Leukocytoza
+W4 Eozynofilia
+W4 Eozynofilia bezw.
+W4 ECP
+W4 Liczba p¢l naplywowych
+W4 Liczba p¢l nablonkowych
+W4 Neutrofile
+W4 Eozynofile
+W4 Eozynofile zdegranulowane
+W4 Limfocyty
+W4 Kom¢rki kubkowe
+W4 Kom¢rki przypodstawne
+W4 Spos¢b zluszczania
+W4 FEV
+W4 FEF 5-75
+W4 PEFR
+W4 Procent zmiennosci po beta
+W4 Max. stezenie szczepionki
+W4 Dawka szczepionki
+W4 Reakcje poszczepienne
+W4 Czas trwania objaw¢w
+W4 Czas trwania max objaw¢w
+W5 Swiszczacy oddech
+W5 Kaszel
+W5 Dusznosc
+W5 Swiad spojowek
+W5 Lzawienie oczu
+W5 Wyciek z nosa
+W5 Zatkanie nosa
+W5 Napady kichania
+W5 Wysypki skorne
+W5 Czestosc infekcji (w roku)
+W5 Hospitalizacja (tyg)
+W5 Antyhistaminiki
+W5 Metyloksantyny
+W5 Sterydy (og¢lnie)
+W5 Sterydy (wziewnie)
+W5 Sterydy (donosowo)
+W5 Kromoglikany (wziewnie)
+W5 Kromoglikany (donosowo)
+W5 Kromoglikany (dospoj¢wkowo)
+W5 Beta-mimetyki
+W5 Betadrin miejscowo
+W5 Ig E (calkowite)
+W5 Ig E (swoiste trawy)
+W5 Ig E (swoiste trawy) klasa
+W5 Leukocytoza
+W5 Eozynofilia
+W5 Eozynofilia bezw.
+W5 ECP
+W5 Liczba p¢l naplywowych
+W5 Liczba p¢l nablonkowych
+W5 Neutrofile
+W5 Eozynofile
+W5 Eozynofile zdegranulowane
+W5 Limfocyty
+W5 Kom¢rki kubkowe
+W5 Kom¢rki przypodstawne
+W5 Spos¢b zluszczania
+W5 FEV
+W5 FEF 5-75
+W5 PEFR
+W5 Procent zmiennosci po beta
+W5 Max. stezenie szczepionki
+W5 Dawka szczepionki
+W5 Reakcje poszczepienne
+W5 Czas trwania objaw¢w
+W5 Czas trwania max objaw¢w
+W6 Swiszczacy oddech
+W6 Kaszel
+W6 Dusznosc
+W6 Swiad spojowek
+W6 Lzawienie oczu
+W6 Wyciek z nosa
+W6 Zatkanie nosa
+W6 Napady kichania
+W6 Wysypki skorne
+W6 Czestosc infekcji (w roku)
+W6 Hospitalizacja (tyg)
+W6 Antyhistaminiki
+W6 Metyloksantyny
+W6 Sterydy (ogolnie)
+W6 Sterydy (wziewnie)
+W6 Sterydy (donosowo)
+W6 Kromoglikany (wziewnie)
+W6 Kromoglikany (donosowo)
+W6 Kromoglikany (dospoj¢wkowo)
+W6 Beta-mimetyki
+W6 Betadrin miejscowo
+W6 Ig E (calkowite)
+W6 Ig E (swoiste trawy)
+W6 Ig E (swoiste trawy) klasa
+W6 Leukocytoza
+W6 Eozynofilia
+W6 Eozynofilia bezw.
+W6 ECP
+W6 Liczba p¢l naplywowych
+W6 Liczba p¢l nablonkowych
+W6 Neutrofile
+W6 Eozynofile
+W6 Eozynofile zdegranulowane
+W6 Limfocyty
+W6 Kom¢rki kubkowe
+W6 Kom¢rki przypodstawne
+W6 Spos¢b zluszczania
+W6 FEV
+W6 FEF 5-75
+W6 PEFR
+W6 Procent zmiennosci po beta
+W6 Max. stezenie szczepionki
+W6 Dawka szczepionki
+W6 Reakcje poszczepienne
+W6 Czas trwania objaw¢w
+W6 Czas trwania max objaw¢w
+W7 Swiszczacy oddech
+W7 Kaszel
+W7 Dusznosc
+W7 Swiad spojowek
+W7 Lzawienie oczu
+W7 Wyciek z nosa
+W7 Zatkanie nosa
+W7 Antyhistaminiki
+W7 Metyloksantyny
+W7 Sterydy (ogolnie)
+W7 Sterydy (wziewnie)
+W7 Sterydy (donosowo)
+W7 Kromoglikany (wziewnie)
+W7 Kromoglikany (donosowo)
+W7 Kromoglikany (dospoj¢wkowo)
+W7 Beta-mimetyki
+W7 Betadrin miejscowo
+W7 Ig E (calkowite)
+W7 Ig E (swoiste trawy)
+W7 Ig E (swoiste trawy) klasa
+W7 Leukocytoza
+W7 Eozynofilia
+W7 Eozynofilia bezw.
+W7 ECP
+W7 Liczba p¢l naplywowych
+W7 Liczba p¢l nablonkowych
+W7 Neutrofile
+W7 Eozynofile
+W7 Eozynofile zdegranulowane
+W7 Limfocyty
+W7 Kom¢rki kubkowe
+W7 Kom¢rki przypodstawne
+W7 Spos¢b zluszczania
+W7 FEV
+W7 FEF 5-75
+W7 PEFR
+POKWITANIE
+Testy 1 (drzewa)
+Testy 1 (trawy I)
+Testy 1 (trawy II)
+Testy 1 (chwasty)
+Testy 1 (plesnie)
+Testy 1 (kurz)
+Testy 1 (derm.pt)
+Testy 1 (derm.fa)
+Testy 2 (drzewa)
+Testy 2 (trawy I)
+Testy 2 (trawy II)
+Testy 2 (chwasty)
+Testy 2 (plesnie)
+Testy 2 (kurz)
+Testy 2 (derm.pt)
+Testy 2 (derm.fa)
+Testy 3 (drzewa)
+Testy 3 (trawy I)
+Testy 3 (trawy II)
+Testy 3 (chwasty)
+Testy 3 (plesnie)
+Testy 3 (kurz)
+Testy 3 (derm.pt)
+Testy 3 (derm.fa)
+W2 SUMA OBJAWOW
+W3 SUMA OBJAWOW
+W4 SUMA OBJAWOW
+W5 SUMA OBJAWOW
+W6 SUMA OBJAWOW
+W7 SUMA OBJAWOW
+w2 SUMA LEKOW
+W3 SUMA LEKOW
+W4 SUMA LEKOW
+W5 SUMA LEKOW
+W6 SUMA LEKOW
+W7 SUMA LEKOW
+Poprawa po 2 latach odczul.
+Poprawa po 3 latach odczul.
+Poprawa po 4 latach odczul.
+Poprawa po 5 latach odczul.
+W7 czas trwania objawow
+W7 Czas trwania max objawow
+W7 Procent zmiennoci po beta
+Kontrola dodatnia 1
+Kontrola dodatnia 2
+Kontrola dodatnia 3
+Roznica sumy objawow po 4 l.
+Roznica sumy objawow po 3 l.
+Roznica sumy objawow po 2 l.
+Roznica sumy objawow po roku
+% rozn. sumy objawow po 4 l.
+% rozn. sumy objawow po 3 l.
+% rozn. sumy objawow po 2 l.
+% rozn. sumy objawow po roku
+Rozn. sumy lekow po 4 l.
+Rozn. sumy lekow po 3 l.
+Rozn. sumy lekow po 2 l.
+Rozn. sumy lekoww po roku
+% rozn. sumy lekow po 4 l.
+% rozn. sumy lekow po 3 l.
+% rozn. sumy lekow po 2 l.
+% rozn. sumy lekow po roku
+IdE c1
+IgE c2
+IgE c3
+IgE sw.tr.1
+IgE sw.tr.2
+IgE sw.tr.3
+IgE sw.tr (klasa) 1
+IgE sw.tr. (klasa) 2
+IgE sw.tr. (klasa) 3
+IgE calk. ponad norme
+IgE sw.tr. kl>=2
+Odczulani przez 4/5 lat
+Wk Swiszczacy oddech
+Wk Kaszel
+Wk Dusznosc
+Wk Swiad spojowek
+Wk Lzawienie oczu
+Wk Wyciek z nosa
+Wk Zatkanie nosa
+Wk Napady kichania
+Wk Wysypki skorne
+Wk Czestosc infekcji (w roku)
+Wk Hospitalizacja (tyg)
+Wk Antyhistaminiki
+Wk Metyloksantyny
+Wk Sterydy (ogolnie)
+Wk Sterydy (wziewnie)
+Wk Sterydy (donosowo)
+Wk Kromoglikany (wziewnie)
+Wk Kromoglikany (donosowo)
+Wk Kromoglikany (dospoj¢wkowo)
+Wk Beta-mimetyki
+Wk Betadrin miejscowo
+Wk Ig E (calkowite)
+Wk Ig E (swoiste trawy)
+Wk Ig E (swoiste trawy) klasa
+Wk Leukocytoza
+Wk Eozynofilia
+Wk Eozynofilia bezw.
+Wk ECP
+Wk Liczba p¢l naplywowych
+Wk Liczba p¢l nablonkowych
+Wk Neutrofile
+Wk Eozynofile
+Wk Eozynofile zdegranulowane
+Wk Limfocyty
+Wk Kom¢rki kubkowe
+Wk Kom¢rki przypodstawne
+Wk Spos¢b zluszczania
+Wk FEV
+Wk FEF 5-75
+Wk PEFR
+Wk Procent zmiennosci po beta
+Wk Max. stezenie szczepionki
+Wk Dawka szczepionki
+Wk Reakcje poszczepienne
+Wk Czas trwania objaw¢w
+Wk Czas trwania max objaw¢w
+W7 Napady kichania
+Pokwitanie2
+Pokwitanie tak/nie
+IgEc1/IgEsw1
+IgEc2/IgEsw2
+IgEc3/IgEsw3
+IgEsw1/IgEc1
+IgEsw2/IgEc2
+IgEsw3/IgEc3
+% poprawa po 4
+% poprawa po 3
+% poprawa po 2
+% poprawa po roku
+Kryt. IgEc (800)
+Kryt. IgEsw (3)
+Kryt. EObzw (700)

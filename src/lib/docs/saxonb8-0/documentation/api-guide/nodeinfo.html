@@ -1,0 +1,171 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--api-guide/nodeinfo
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: The NodeInfo Object</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: The NodeInfo Object">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>The NodeInfo Object</h1>
+      
+      
+      
+      <p>The <b>NodeInfo</b> object represents a node of an XML document. It has a subclass <code>DocumentInfo</code> to
+         represent the root node, but all other nodes are represented by <code>NodeInfo</code> itself. These follow the
+         XPath data model closely.
+      </p>
+      
+      
+      <p><i>In earlier releases, NodeInfo extended the DOM interface <code>Node</code>. This is no longer the case;
+            it was changed to make it easier to integrate Saxon with other XML tree representations such as JDOM.
+            However, the main Saxon implementations of the <code>NodeInfo</code> interface continue to also implement the DOM 
+            <code>Node</code> interface, so you can still use DOM methods by casting the concrete node object to a DOM class.</i></p>
+      
+      
+      <p>The NodeInfo object provides the application with
+         information about the node. The most commonly used methods include:
+      </p>
+      
+      
+      <table>
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>getNodeKind()</p>
+            </td>
+            
+            <td>
+               <p>gets a short identifying the node type (for example, element or attribute). The values are
+                  consistent with those used in the DOM, and are referenced by constants in the class
+                  <code>net.sf.saxon.value.Type</code></p>
+            </td>
+            
+         </tr>
+         
+         <tr>
+            
+            <td VALIGN="TOP" WIDTH="30%">
+               <p>getDisplayName(), getLocalPart(), getPrefix(), getURI()</p>
+            </td>
+            
+            <td>
+               <p>These methods get the name of the element, or its various parts. The getDisplayName()
+                  method returns the QName as used in the original source XML.
+               </p>
+            </td>
+            
+         </tr>
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>getAttributeValue()</p>
+            </td>
+            
+            <td>
+               <p>get the value of a specified attribute, as a String.</p>
+            </td>
+            
+         </tr>
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>getStringValue()</p>
+            </td>
+            
+            <td>
+               <p>get the string value of a node, as defined in the XPath data model</p>
+            </td>
+            
+         </tr>
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>getTypedValue()</p>
+            </td>
+            
+            <td>
+               <p>get the typed value of a node, as defined in the XPath data model. This is in general a sequence
+                  of atomic values, so the result is a <code>SequenceIterator</code>.
+               </p>
+            </td>
+            
+         </tr>  
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>getParent()</p>
+            </td>
+            
+            <td>
+               <p>get the NodeInfo representing the parent element, (which will be a <code>DocumentInfo</code> object
+                  if this is the outermost element).
+               </p>
+            </td>
+            
+         </tr>
+         
+         <tr>
+            
+            <td VALIGN="TOP">
+               <p>iterateAxis()</p>
+            </td>
+            
+            <td>
+               <p>returns an SequenceIterator object that can be used to iterate over the nodes on any of the
+                  XPath axes. The first argument is an integer identifying the axis; the second is a <code>NodeTest</code> (a
+                  simple form of pattern) which can be used to filter the nodes on the axis. Supply <code>null</code>
+                  if you want all the nodes on the axis. (For most applications, it is probably simpler to navigate
+                  from a node by compiling an XPath expression, and executing it with the correct starting node as
+                  the context node).
+               </p>
+            </td>
+            
+         </tr>
+         
+      </table>
+      
+      
+      <p>For other methods, see the JavaDoc documentation.</p>
+      
+      
+      <p>It is possible (though not easy) to provide your own implementation of the <code>NodeInfo</code> interface,
+         perhaps allowing Saxon queries to run directly against some non-XML data source. There are helper methods in the
+         <code>net.sf.saxon.om.Navigator</code> class that reduce the amount of code you need to write to achieve this.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="nodeinfo.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="building.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

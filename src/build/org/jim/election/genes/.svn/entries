@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="56"
+   name=""
+   committed-date="2005-02-28T00:48:51.782928Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim/election/genes"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   schedule="delete"
+   revision="57"/>
+<entry
+   committed-rev="56"
+   name="GenesArrayGene.java"
+   text-time="2005-02-28T22:20:34.046875Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="ee3b2de8e4ceb7adae985d2d169b9d6b"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:33.968750Z"/>
+<entry
+   committed-rev="56"
+   name="DoubleGene.java"
+   text-time="2005-02-28T22:20:34.093750Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="f4fe67ff6d9529f759172bd1a9cb5542"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.015625Z"/>
+</wc-entries>

@@ -1,0 +1,246 @@
+package org.jim.parser.util;
+
+import java.io.*;
+import java.util.*;
+
+import org.apache.log4j.*;
+import org.joone.engine.*;
+import org.joone.net.*;
+import org.joone.io.*;
+
+/**
+ * Class providing a toolkit for typical work with NeuralNet.
+ * 
+ * @author Mateusz Lapsa
+ */
+public class NetworkExecutor implements NeuralNetListener {
+    /**
+     * Keeps the reference to Logger configured for this specific class. logger
+     * is shared between class instances
+     */
+    static Logger logger = Logger.getLogger(NetworkExecutor.class.getClass()
+            .getName());
+
+    /**
+     * Execution state - init
+     */
+    final int STATE_INIT = 0;
+
+    /**
+     * Execution state - started/runing
+     */
+    final int STATE_STARTED = 1;
+
+    /**
+     * Execution state - stopped/finished
+     */
+    final int STATE_STOPPED = 2;
+
+    /**
+     * The exection state machine
+     */
+    int state = this.STATE_INIT;
+
+    /**
+     * Executed network
+     */
+    NeuralNet net = null;
+
+    /**
+     * Input Synapse
+     */
+    MemoryInputSynapse inputSynapse = null;
+
+    /**
+     * Output Synapse
+     */
+    MemoryOutputSynapse outputSynapse = null;
+
+    /**
+     * Empty constructor
+     *  
+     */
+    public NetworkExecutor() {
+    }
+
+    /**
+     * Constructor copying the networkToExecute
+     * 
+     * @param networkToExecute
+     */
+    public NetworkExecutor(NeuralNet networkToExecute) {
+        net = networkToExecute;
+    }
+
+    /**
+     * Constructor copying the networkToExecute and preparing the network with
+     * specified data input.
+     * 
+     * @param networkToExecute
+     *            the network itself
+     * @param inputTableToExecuteOn
+     *            table of input sets
+     * @param enabledInputsSelectionString
+     *            columns selection String
+     */
+    public NetworkExecutor(NeuralNet networkToExecute,
+            double[][] inputTableToExecuteOn,
+            String enabledInputsSelectionString) {
+        net = networkToExecute;
+        prepareNetwork(inputTableToExecuteOn, enabledInputsSelectionString);
+    }
+
+    /**
+     * Prepares network encapsulated by the class. It removes all listeners,
+     * inputs, outputs and adds new one. NetworkExecutor will be a new
+     * NetworkListener. The new input will be MemoryInputSynapse with inputTable
+     * as data. The new output will be MemoryOutputSynapse. Network output can
+     * be obtain by executing getOutputTable.
+     * 
+     * @param inputTable
+     */
+    public void prepareNetwork(double[][] inputTable,
+            String enabledInputsSelectionString) {
+        Monitor monitor = new Monitor();
+        net.setMonitor(monitor);
+        net.getMonitor().setExporting(false);
+        net.getMonitor().setTrainingPatterns(inputTable.length);
+        net.getMonitor().setTotCicles(1);
+        net.getMonitor().setLearning(false);
+
+        net.removeAllListeners();
+        net.removeAllInputs();
+        net.removeAllOutputs();
+
+        net.addNeuralNetListener(this);
+
+        inputSynapse = new MemoryInputSynapse();
+        inputSynapse.setInputArray(inputTable);
+        inputSynapse.setAdvancedColumnSelector(enabledInputsSelectionString);
+        //                "1-" + inputTable[0].length);
+
+        net.getInputLayer().addInputSynapse(inputSynapse);
+
+        outputSynapse = new MemoryOutputSynapse();
+        net.getOutputLayer().addOutputSynapse(outputSynapse);
+    }
+
+    /**
+     * Will wait for network execution end and return all outputs
+     * 
+     * @return
+     */
+    public double[][] getOutputTable() {
+        Vector outputs = outputSynapse.getAllPatterns();
+        double[][] outputTable = new double[outputs.size()][];
+        int j = 0;
+        for (Iterator i = outputs.iterator(); i.hasNext();) {
+            Pattern pat = (Pattern) i.next();
+            double[] element = pat.getArray();
+            outputTable[j++] = element;
+        }
+        return outputTable;
+    }
+
+    /**
+     * @see org.joone.engine.NeuralNetListener#cicleTerminated(org.joone.engine.NeuralNetEvent)
+     */
+    public void cicleTerminated(NeuralNetEvent e) {
+        logger.debug("cicleTerminated");
+
+    }
+
+    /**
+     * @see org.joone.engine.NeuralNetListener#errorChanged(org.joone.engine.NeuralNetEvent)
+     */
+    public void errorChanged(NeuralNetEvent e) {
+//        logger.debug("errorChanged");
+
+    }
+
+    /**
+     * @see org.joone.engine.NeuralNetListener#netStarted(org.joone.engine.NeuralNetEvent)
+     */
+    public void netStarted(NeuralNetEvent e) {
+        logger.debug("netStarted");
+    }
+
+    /**
+     * @see org.joone.engine.NeuralNetListener#netStopped(org.joone.engine.NeuralNetEvent)
+     */
+    public void netStopped(NeuralNetEvent e) {
+        logger.debug("netStopped");
+        state = STATE_STOPPED;
+    }
+
+    /**
+     * @see org.joone.engine.NeuralNetListener#netStoppedError(org.joone.engine.NeuralNetEvent,
+     *      java.lang.String)
+     */
+    public void netStoppedError(NeuralNetEvent e, String error) {
+
+    }
+
+    /**
+     * Starts the network in async mode
+     */
+    public void go() {
+        state = STATE_STARTED;
+        net.start();
+        net.getMonitor().Go();
+    }
+
+    /**
+     * Starts the network in sync mode
+     * 
+     * @return
+     */
+    public NeuralNet goSync() {
+        go();
+        while (state == STATE_STARTED)
+            ;
+        return net;
+    }
+
+    /**
+     * Helper function that deserializes network from file and returns it.
+     * 
+     * @return Deserialized network
+     * @param fileName
+     *            file holding the network
+     */
+    public static NeuralNet loadNeuralNet(String fileName) {
+        NeuralNet nnet = null;
+        try {
+            FileInputStream stream = new FileInputStream(fileName);
+            ObjectInputStream inp = new ObjectInputStream(stream);
+            nnet = (NeuralNet) inp.readObject();
+        } catch (Exception excp) {
+            excp.printStackTrace();
+        }
+        return nnet;
+    }
+
+    /**
+     * Helper function that connects two Layers together.
+     * 
+     * @param input
+     *            the input layer
+     * @param output
+     *            the output layer
+     * @param connector
+     *            the connecting synapse
+     */
+    public static void connectLayers(Layer input, Layer output,
+            Synapse connector) {
+        input.addOutputSynapse(connector);
+        output.addInputSynapse(connector);
+    }
+
+    /**
+     * @return the value of RMSE from network monitor
+     */
+    public double getRMSE() {
+        return net.getMonitor().getGlobalError();
+    }
+}

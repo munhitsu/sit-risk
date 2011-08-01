@@ -1,0 +1,242 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--extensibility/converting-args
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Converting Arguments to Extension Functions</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Converting Arguments to Extension Functions">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>Converting Arguments to Extension Functions</h1>
+      
+      
+      <p>This section describes how XPath values supplied in a call to an extension function are converted to
+         Java values.
+      </p>
+      
+      
+      <p>The following conversions are supported between the supplied value of the argument and the declared
+         Java class of the argument. The mappings are given in order of preference; a class that appears earlier
+         in the list has smaller "conversion distance" than one appearing later. These priorities are used to decide
+         which method to call when the class has several methods of the same name. Simple classes (such as boolean)
+         are acceptable wherever the corresponding wrapper class (Boolean) is allowed. Class names shown in
+         italics are Saxon-specific classes.
+      </p>
+      
+      
+      <p>If the supplied value is a singleton (a sequence of one item) then the type of that item is decisive. If
+         it is a sequence of length zero or more than one, then the general rules for a sequence are applied, and the
+         types of the items within the sequence are irrelevant.
+      </p>
+      
+      
+      <table>
+         
+         <tr>
+            <td valign="top" width="30%">
+               <p><b>Supplied value</b></p>
+            </td>
+            <td valign="top">
+               <p><b>Required type</b></p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>boolean</p>
+            </td>
+            <td>
+               <p><i>BooleanValue</i>, Boolean, (String, CharSequence), Byte, Character, Double, Float, Integer, Long, Short, Byte), List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>dateTime</p>
+            </td>
+            <td>
+               <p><i>DateTimeValue</i>, Date, String, Object
+               </p>
+            </td>
+         </tr>   
+         
+         <tr>
+            <td valign="top">
+               <p>date</p>
+            </td>
+            <td>
+               <p><i>DateValue</i>, Date, (String, CharSequence), Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>decimal</p>
+            </td>
+            <td>
+               <p><i>DecimalValue</i>, BigDecimal, Double, Float, Long, Integer, Short, Character, Byte, Boolean, (String, CharSequence), List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>double</p>
+            </td>
+            <td>
+               <p><i>DoubleValue</i>, Double, Float, Long, Integer, Short, Character, Byte, Boolean, (String, CharSequence), List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>duration</p>
+            </td>
+            <td>
+               <p><i>DurationValue</i>, (String, CharSequence), Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>float</p>
+            </td>
+            <td>
+               <p><i>FloatValue</i>, Float, Double, Long, Integer, Short, Character, Byte, Boolean, (String, CharSequence), List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>integer</p>
+            </td>
+            <td>
+               <p><i>IntegerValue</i>, Long, Double, Float, Integer, Short, Character, Byte, Boolean, (String, CharSequence), List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>string</p>
+            </td>
+            <td>
+               <p><i>StringValue</i>, (String, CharSequence), Character, Double, Float, Integer, Long, Short, Boolean, Byte, List, Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>anyURI</p>
+            </td>
+            <td>
+               <p><i>AnyURIValue</i>, java.net.URI, java.net.URL, (String, CharSequence), List, Object
+               </p>
+            </td>
+         </tr> 
+         
+         <tr>
+            <td valign="top">
+               <p>node</p>
+            </td>
+            <td>
+               <p><i>SingletonNodeSet</i>, NodeList, (Element, Attr, Document, DocumentFragment, 
+                  Comment, Text, ProcessingInstruction, CharacterData), Node, Boolean, 
+                  Byte, Character, Double, Float, Integer, Long, Short, (String, CharSequence), Object
+               </p>
+            </td>
+         </tr>
+         
+         <tr>
+            <td valign="top">
+               <p>sequence</p>
+            </td>
+            <td>
+               <p><i>SequenceIterator</i>, <i>SequenceValue</i>, List, NodeList, <i>NodeInfo</i>, Node, (String, CharSequence), Boolean, 
+                  Byte, Character, Double, Float, Integer, Long, Short, Object
+               </p>
+            </td>
+         </tr>
+         
+      </table>
+      
+      
+      <p>Saxon first tries to select the appropriate method based on the <i>static type</i> of the arguments
+         to the function call. If there is insufficient information statically, it tries again at run-time, based
+         on the <i>dynamic type</i> of the arguments once evaluated. This means that the same function call may
+         invoke different methods on different occasions.
+      </p>
+      
+      
+      <p>Note that the XPath value is considered to be one of the singleton classes if it is produced by an
+         expression that always produces a singleton. So the expression <code>1+2</code> will be an integer. An
+         expression that can potentially produce a sequence of any cardinality is represented in the table above
+         by the generic class "sequence". For example, <code>($a to $b)</code> is represented as a sequence, except
+         when it can be determined statically that <code>$a</code> and <code>$b</code> are equal, in which case it is represented as an
+         integer.
+      </p>
+      
+      
+      <p><i>These rules will probably be rationalized further in future releases.</i></p>
+      
+      
+      <p>A wrapped Java object may be converted to another data type as follows.</p>
+      
+      
+      <ul>
+         
+         <li>
+            <p>It is converted to a string by using its toString() method; if the object is null, the result is
+               the empty string "".
+            </p>
+         </li>
+         
+         <li>
+            <p>It is converted to a number by converting it first to a string, and then applying the
+               XPath number() conversion. If it is null, the result is NaN.
+            </p>
+         </li>
+         
+         <li>
+            <p>It is converted to a boolean as follows: if it is null, the result is false, otherwise
+               it is converted to a string and the result is true if and only if the string is non-empty.
+            </p>
+         </li>
+         
+      </ul> 
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="converting-args.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="function-result.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="56"
+   name=""
+   committed-date="2005-02-28T00:48:51.782928Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim/election"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   revision="57"/>
+<entry
+   name="genes"
+   kind="dir"
+   schedule="delete"/>
+<entry
+   committed-rev="56"
+   name="NetworkArchitectureRMSEFitnessFunction.java"
+   text-time="2005-02-28T22:20:34.265625Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="ceed641cfcae4048207ef9d7cc05abb4"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.171875Z"/>
+<entry
+   committed-rev="56"
+   name="ChromosomeTeacher.java"
+   text-time="2005-02-28T22:20:34.312500Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="6378541e33cdba1a62d2e8c7e1587de0"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.203125Z"/>
+<entry
+   committed-rev="56"
+   name="NetworkArchitectureElector.java"
+   text-time="2005-02-28T22:20:34.343750Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="4d485cd3627bab7f06572dfa2490af25"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.218750Z"/>
+</wc-entries>

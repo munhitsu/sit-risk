@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="57"
+   name=""
+   committed-date="2005-02-28T21:57:00.455457Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim/parser/util"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   schedule="delete"
+   revision="57"/>
+<entry
+   committed-rev="57"
+   name="DocumentTools.java"
+   text-time="2005-02-28T22:20:35.000000Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="f5eb9714dfaf119a41a80b29deeeec49"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.796875Z"/>
+<entry
+   committed-rev="57"
+   name="XHTMLOutputSynapse.java"
+   text-time="2005-02-28T22:20:35.046875Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="7f6e7f93d14da583a0417955ee20f297"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.828125Z"/>
+<entry
+   committed-rev="57"
+   name="XMLInputSynapse.java"
+   text-time="2005-02-28T22:20:35.093750Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="6368acf76cb2092ed7428c84a89c936f"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.843750Z"/>
+<entry
+   committed-rev="57"
+   name="NetworkTeacher.java"
+   text-time="2005-02-28T22:20:35.140625Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="e63d93a73f3d8ca86e972682b4b65b0d"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.875000Z"/>
+<entry
+   committed-rev="57"
+   name="NetworkElector.java"
+   text-time="2005-02-28T22:20:35.171875Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="a9201c5f101f3ad99839ba46601da94c"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.890625Z"/>
+<entry
+   committed-rev="57"
+   name="Table.java"
+   text-time="2005-02-28T22:20:35.218750Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="36cab345792ff7b04b5b4f9b261f48f0"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.921875Z"/>
+<entry
+   committed-rev="57"
+   name="NetworkExecutor.java"
+   text-time="2005-02-28T22:20:35.265625Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="660b1c977baa7da74265b5ea6e49ab50"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.937500Z"/>
+<entry
+   committed-rev="57"
+   name="Range.java"
+   text-time="2005-02-28T22:20:35.312500Z"
+   committed-date="2005-02-28T21:57:00.455457Z"
+   checksum="57d9e6ea44eb63d751a3c41fd78c6a62"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.968750Z"/>
+</wc-entries>

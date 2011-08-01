@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="57"
+   name=""
+   committed-date="2005-02-28T21:57:00.455457Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   revision="57"/>
+<entry
+   name="election"
+   kind="dir"/>
+<entry
+   committed-rev="56"
+   name="Config.java"
+   text-time="2005-02-28T22:20:35.687500Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="c8d5c3602cc64478ae3931eb94ee07f3"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.421875Z"/>
+<entry
+   name="parser"
+   kind="dir"/>
+</wc-entries>

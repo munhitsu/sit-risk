@@ -1,0 +1,134 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--schema-processing/satransformcmd
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Schema-Aware XSLT from the Command Line</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Schema-Aware XSLT from the Command Line">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>Schema-Aware XSLT from the Command Line</h1>
+      
+      
+      <p>To run a schema-aware transformation from the command line, use the <code>com.saxonica.Transform</code> command
+         instead of the usual <code>net.sf.saxon.Transform</code>. This has an additional option <code>-val</code> to
+         request validation of the source document. This applies not only to the principal source document loaded from the
+         command line, but to all documents loaded via the <code>doc()</code> and <code>document()</code> functions.
+      </p>
+      
+      
+      <p>The schemas to be used to validate these source documents can be specified either by using the
+         <code>xsl:import-schema</code> declaration in the stylesheet, or using <code>xsi:schemaLocation</code>
+         (or <code>xsi:noNamespaceSchemaLocation</code>) attributes within the source documents themselves.
+      </p>
+      
+      
+      <p>Validating the source document has several effects. Most obviously, it will cause the transformation to fail
+         if the document is invalid. It will also cause default values for attributes and elements to be expanded, so they
+         will appear to the stylesheet as if they were present on the source document. In addition, element and attribute nodes
+         that have been validated will be annotated with a type. This enables operations to be performed in a type-safe way.
+         This may cause error messages, for example if you try to use an xs:decimal value as an argument to a function that
+         expects a string. It may also cause some operations to produce different results: for example when using
+         elements or attribute that have been given a list type in the schema, the typed value of the node will appear
+         in the stylesheet as a sequence rather than as a single string value.
+      </p>
+      
+      
+      <p>Saxon-SA also allows you to validate result documents (both final result documents
+         and temporary trees), using the <code>validation</code> and <code>type</code> attributes. For details of these,
+         refer to the XSLT 2.0 specification. Validation of result documents is done on-the-fly, so if the stylesheet
+         attempts to produce invalid output, you will usually get an error message that identifies the offending instruction
+         in the stylesheet. Type annotations on final result documents are lost if you send the output to a standard JAXP
+         <code>Result</code> object (whether it's a <code>StreamResult</code>, <code>SAXResult</code>, or <code>DOMResult</code>,
+         but they remain available if you capture the output in a Saxon <code>Receiver</code> or in a <code>DOMResult</code>
+         that encapsulates a Saxon <code>NodeInfo</code>. For details of the way in which type annotations are represented
+         in the Saxon implementation of the data model, see the JavaDoc documentation. The <code>getTypeAnnotation()</code>
+         method on a <code>NodeInfo</code> object returns an integer fingerprint, which can be used to locate the name of the
+         relevant type in the <code>NamePool</code>. The <code>NamePool</code> also provides the ability to locate the actual
+         type definitions in the schema model, starting from these integer fingerprints.
+      </p>
+      
+      
+      <p><i>The <code>type</code> attribute is not currently supported on instructions that create document nodes,
+            as distinct from element or attribute nodes.</i></p>
+      
+      
+      <p>With the schema-aware version of Saxon, type declarations (the <code>as</code> attribute on elements such as
+         <code>xsl:function</code>, <code>xsl:variable</code>, and <code>xsl:param</code>) can refer to schema-defined types,
+         for example you can write <code>&lt;xsl:variable name="a" as="schema-element(ipo:invoice)"/&gt;</code>. You can also use
+         the <code>element()</code> and <code>attribute()</code> tests to select nodes by their schema type in path expressions
+         and match patterns. See <a class="bodylink" href="javascript:topage('conformance', 'intro')">conformance.html</a> to check which parts of the syntax have
+         been implemented.
+      </p>
+      
+      
+      <p>The W3C Working Groups have agreed changes to this part of the XPath syntax since the last published working
+         draft in November 2003, and Saxon implements these changes. The constructs allowed are:
+      </p>
+      
+      
+      <ul>
+         
+         <li>
+            <p><code>element()</code>, which matches any element
+            </p>
+         </li>
+         
+         <li>
+            <p><code>element(N)</code>, which matches any element named N
+            </p>
+         </li>
+         
+         <li>
+            <p><code>element(N, T)</code>, which matches any element whose name is N and whose type annotation is T or a subtype
+               of T. T must be a global type declaration (simple or complex) in an imported schema.
+            </p>
+         </li>
+         
+         <li>
+            <p><code>schema-element(N)</code>, which matches any element whose name is N or a member of the substitution group headed
+               by element N, and whose type is the same as (or a subtype of) the declared type of N. Here N must be the name of a global
+               element declaration in an imported schema.
+            </p>
+         </li>
+         
+      </ul>
+      
+      
+      <p>Similar constructs are defined for attributes.</p> 
+      
+      
+      <p>Saxon does not at present do any static analysis of the XSLT or XPath code based on schema information, other
+         than checking that all schema types that are referred to have actually been defined in an imported schema.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="satransformcmd.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="satransformapi.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

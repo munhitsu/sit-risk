@@ -1,0 +1,142 @@
+<!ELEMENT w_swiad_spojowek (#PCDATA)>
+<!ELEMENT w3 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_suma_objawow | w_suma_lekow)*>
+<!ELEMENT roznica_sumy_objawow_po_roku (#PCDATA)>
+<!ELEMENT w_eozynofilia (#PCDATA)>
+<!ELEMENT pokwitanie (#PCDATA)>
+<!ELEMENT poprawa_po_2_latach_odczul (#PCDATA)>
+<!ELEMENT igesw2_lub_igec2 (#PCDATA)>
+<!ELEMENT roznica_sumy_objawow_po_4_l (#PCDATA)>
+<!ELEMENT w1 (#PCDATA | w_czas_choroby_do_it_skora | w_czas_choroby_do_it_nos | w_czas_choroby_do_it_astma | w_obciazajacy_wywiad_rodzinny | w_dlugosc_choroby_przed_it | w_phadiatop | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_poprawa_kodowana | w_roznica_miedzy_objawami)*>
+<!ELEMENT w_lzawienie_oczu (#PCDATA)>
+<!ELEMENT w_sterydy_donosowo (#PCDATA)>
+<!ELEMENT rozn_sumy_lekow_po_3_l (#PCDATA)>
+<!ELEMENT roznica_sumy_objawow_po_2_l (#PCDATA)>
+<!ELEMENT w_fev (#PCDATA)>
+<!ELEMENT ide_c1 (#PCDATA)>
+<!ELEMENT w_kromoglikany_dospojowkowo (#PCDATA)>
+<!ELEMENT w_swiszczacy_oddech (#PCDATA)>
+<!ELEMENT other (#PCDATA | pokwitanie | poprawa_po_2_latach_odczul | poprawa_po_3_latach_odczul | poprawa_po_4_latach_odczul | poprawa_po_5_latach_odczul | kontrola_dodatnia_1 | kontrola_dodatnia_2 | kontrola_dodatnia_3 | roznica_sumy_objawow_po_4_l | roznica_sumy_objawow_po_3_l | roznica_sumy_objawow_po_2_l | roznica_sumy_objawow_po_roku | procent_rozn_sumy_objawow_po_4_l | procent_rozn_sumy_objawow_po_3_l | procent_rozn_sumy_objawow_po_2_l | procent_rozn_sumy_objawow_po_roku | rozn_sumy_lekow_po_4_l | rozn_sumy_lekow_po_3_l | rozn_sumy_lekow_po_2_l | rozn_sumy_lekoww_po_roku | procent_rozn_sumy_lekow_po_4_l | procent_rozn_sumy_lekow_po_3_l | procent_rozn_sumy_lekow_po_2_l | procent_rozn_sumy_lekow_po_roku | ide_c1 | ige_c2 | ige_c3 | ige_swtr1 | ige_swtr2 | ige_swtr3 | ige_swtr_klasa_1 | ige_swtr_klasa_2 | ige_swtr_klasa_3 | ige_calk_ponad_norme | ige_swtr_kl_wieksze_rowne_2 | odczulani_przez_4_lub_5_lat | pokwitanie2 | igec1_lub_igesw1 | igec2_lub_igesw2 | igec3_lub_igesw3 | igesw1_lub_igec1 | igesw2_lub_igec2 | igesw3_lub_igec3 | procent_poprawa_po_4 | procent_poprawa_po_3 | procent_poprawa_po_2 | procent_poprawa_po_roku | kryt_igec_800 | kryt_igesw_3 | kryt_eobzw_700)*>
+<!ELEMENT w_ig_e_swoiste_trawy_klasa (#PCDATA)>
+<!ELEMENT w_czestosc_infekcji_w_roku (#PCDATA)>
+<!ELEMENT igec2_lub_igesw2 (#PCDATA)>
+<!ELEMENT procent_poprawa_po_4 (#PCDATA)>
+<!ELEMENT w_zatkanie_nosa (#PCDATA)>
+<!ELEMENT testy_dermfa (#PCDATA)>
+<!ELEMENT w_beta-mimetyki (#PCDATA)>
+<!ELEMENT igec3_lub_igesw3 (#PCDATA)>
+<!ELEMENT w_leukocytoza (#PCDATA)>
+<!ELEMENT igesw3_lub_igec3 (#PCDATA)>
+<!ELEMENT testy_drzewa (#PCDATA)>
+<!ELEMENT testy_3 (#PCDATA | testy_drzewa | testy_trawy_i | testy_trawy_ii | testy_chwasty | testy_plesnie | testy_kurz | testy_dermpt | testy_dermfa)*>
+<!ELEMENT igec1_lub_igesw1 (#PCDATA)>
+<!ELEMENT podzial_na_4_grupy (#PCDATA)>
+<!ELEMENT w2 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_hospitalizacja__w_tyg | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_suma_objawow | w_suma_lekow)*>
+<!ELEMENT kontrola_dodatnia_1 (#PCDATA)>
+<!ELEMENT poprawa_po_3_latach_odczul (#PCDATA)>
+<!ELEMENT w_dawka_szczepionki (#PCDATA)>
+<!ELEMENT ige_swtr3 (#PCDATA)>
+<!ELEMENT w_procent_zmiennoci_po_beta (#PCDATA)>
+<!ELEMENT w_metyloksantyny (#PCDATA)>
+<!ELEMENT w_czas_trwania_objawow (#PCDATA)>
+<!ELEMENT w_kaszel (#PCDATA)>
+<!ELEMENT w_hospitalizacja_tyg (#PCDATA)>
+<!ELEMENT wywiad (#PCDATA | numer_porzadkowy | grupa_lub_kontrola | grupa_pacjentow | podzial_na_4_grupy | plec | wiek_w_latach | miesiac_urodzenia | rozpoznanie | natezenie_astmy_rozpoznanie | na_co_pierwsze_chorowal | obciazenie_rodzinne)*>
+<!ELEMENT ige_swtr_klasa_1 (#PCDATA)>
+<!ELEMENT natezenie_astmy_rozpoznanie (#PCDATA)>
+<!ELEMENT w_eozynofile (#PCDATA)>
+<!ELEMENT kryt_eobzw_700 (#PCDATA)>
+<!ELEMENT w_napady_kichania (#PCDATA)>
+<!ELEMENT w_wyciek_z_nosa (#PCDATA)>
+<!ELEMENT procent_poprawa_po_2 (#PCDATA)>
+<!ELEMENT roznica_sumy_objawow_po_3_l (#PCDATA)>
+<!ELEMENT w_limfocyty (#PCDATA)>
+<!ELEMENT testy_plesnie (#PCDATA)>
+<!ELEMENT grupa_pacjentow (#PCDATA)>
+<!ELEMENT w_phadiatop (#PCDATA)>
+<!ELEMENT testy_2 (#PCDATA | testy_drzewa | testy_trawy_i | testy_trawy_ii | testy_chwasty | testy_plesnie | testy_kurz | testy_dermpt | testy_dermfa)*>
+<!ELEMENT grupa_lub_kontrola (#PCDATA)>
+<!ELEMENT ige_c2 (#PCDATA)>
+<!ELEMENT w_liczba_pol_nablonkowych (#PCDATA)>
+<!ELEMENT w_ig_e_calkowite (#PCDATA)>
+<!ELEMENT w_obciazajacy_wywiad_rodzinny (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_objawow_po_2_l (#PCDATA)>
+<!ELEMENT ige_calk_ponad_norme (#PCDATA)>
+<!ELEMENT ige_swtr_klasa_2 (#PCDATA)>
+<!ELEMENT w_betadrin_miejscowo (#PCDATA)>
+<!ELEMENT w_eozynofile_zdegranulowane (#PCDATA)>
+<!ELEMENT w_dusznosc (#PCDATA)>
+<!ELEMENT w_suma_objawow (#PCDATA)>
+<!ELEMENT w_czas_choroby_do_it_astma (#PCDATA)>
+<!ELEMENT testy_chwasty (#PCDATA)>
+<!ELEMENT testy_trawy_i (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_lekow_po_roku (#PCDATA)>
+<!ELEMENT w5 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_hospitalizacja_tyg | w_suma_objawow | w_suma_lekow)*>
+<!ELEMENT ige_swtr_kl_wieksze_rowne_2 (#PCDATA)>
+<!ELEMENT numer_porzadkowy (#PCDATA)>
+<!ELEMENT testy_1 (#PCDATA | testy_drzewa | testy_trawy_i | testy_trawy_ii | testy_chwasty | testy_plesnie | testy_kurz | testy_dermpt | testy_dermfa)*>
+<!ELEMENT pokwitanie2 (#PCDATA)>
+<!ELEMENT w_pefr (#PCDATA)>
+<!ELEMENT poprawa_po_4_latach_odczul (#PCDATA)>
+<!ELEMENT w_liczba_pol_naplywowych (#PCDATA)>
+<!ELEMENT pacjenci (#PCDATA | pacjent)*>
+<!ELEMENT procent_rozn_sumy_objawow_po_4_l (#PCDATA)>
+<!ELEMENT testy_kurz (#PCDATA)>
+<!ELEMENT w_sterydy_ogolnie (#PCDATA)>
+<!ELEMENT rozn_sumy_lekoww_po_roku (#PCDATA)>
+<!ELEMENT w4 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_hospitalizacja_tyg | w_suma_objawow | w_suma_lekow)*>
+<!ELEMENT miesiac_urodzenia (#PCDATA)>
+<!ELEMENT w6 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_hospitalizacja_tyg | w_suma_objawow | w_suma_lekow)*>
+<!ELEMENT procent_poprawa_po_3 (#PCDATA)>
+<!ELEMENT w_poprawa_kodowana (#PCDATA)>
+<!ELEMENT ige_c3 (#PCDATA)>
+<!ELEMENT w_kromoglikany_donosowo (#PCDATA)>
+<!ELEMENT plec (#PCDATA)>
+<!ELEMENT testy_trawy_ii (#PCDATA)>
+<!ELEMENT wiek_w_latach (#PCDATA)>
+<!ELEMENT testy_dermpt (#PCDATA)>
+<!ELEMENT w_roznica_miedzy_objawami (#PCDATA)>
+<!ELEMENT w_czas_choroby_do_it_nos (#PCDATA)>
+<!ELEMENT kontrola_dodatnia_2 (#PCDATA)>
+<!ELEMENT kryt_igec_800 (#PCDATA)>
+<!ELEMENT rozn_sumy_lekow_po_4_l (#PCDATA)>
+<!ELEMENT w_hospitalizacja__w_tyg (#PCDATA)>
+<!ELEMENT w_kromoglikany_wziewnie (#PCDATA)>
+<!ELEMENT kontrola_dodatnia_3 (#PCDATA)>
+<!ELEMENT igesw1_lub_igec1 (#PCDATA)>
+<!ELEMENT rozn_sumy_lekow_po_2_l (#PCDATA)>
+<!ELEMENT w_eozynofilia_bezw (#PCDATA)>
+<!ELEMENT w_antyhistaminiki (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_lekow_po_2_l (#PCDATA)>
+<!ELEMENT poprawa_po_5_latach_odczul (#PCDATA)>
+<!ELEMENT w7 (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_suma_objawow | w_suma_lekow | w_procent_zmiennoci_po_beta)*>
+<!ELEMENT w_komorki_kubkowe (#PCDATA)>
+<!ELEMENT w_dlugosc_choroby_przed_it (#PCDATA)>
+<!ELEMENT rozpoznanie (#PCDATA)>
+<!ELEMENT w_czas_choroby_do_it_skora (#PCDATA)>
+<!ELEMENT w_reakcje_poszczepienne (#PCDATA)>
+<!ELEMENT odczulani_przez_4_lub_5_lat (#PCDATA)>
+<!ELEMENT ige_swtr_klasa_3 (#PCDATA)>
+<!ELEMENT w_komorki_przypodstawne (#PCDATA)>
+<!ELEMENT obciazenie_rodzinne (#PCDATA)>
+<!ELEMENT w_ig_e_swoiste_trawy (#PCDATA)>
+<!ELEMENT wk (#PCDATA | w_leukocytoza | w_eozynofilia | w_eozynofilia_bezw | w_ecp | w_liczba_pol_naplywowych | w_liczba_pol_nablonkowych | w_neutrofile | w_eozynofile | w_eozynofile_zdegranulowane | w_limfocyty | w_komorki_kubkowe | w_komorki_przypodstawne | w_sposob_zluszczania | w_fev | w_fef_5-75 | w_pefr | w_procent_zmiennosci_po_beta | w_swiszczacy_oddech | w_kaszel | w_dusznosc | w_swiad_spojowek | w_lzawienie_oczu | w_wyciek_z_nosa | w_zatkanie_nosa | w_napady_kichania | w_wysypki_skorne | w_czestosc_infekcji_w_roku | w_antyhistaminiki | w_metyloksantyny | w_sterydy_ogolnie | w_sterydy_wziewnie | w_sterydy_donosowo | w_kromoglikany_wziewnie | w_kromoglikany_donosowo | w_kromoglikany_dospojowkowo | w_beta-mimetyki | w_betadrin_miejscowo | w_ig_e_calkowite | w_ig_e_swoiste_trawy | w_ig_e_swoiste_trawy_klasa | w_max_stezenie_szczepionki | w_dawka_szczepionki | w_reakcje_poszczepienne | w_czas_trwania_objawow | w_czas_trwania_max_objawow | w_hospitalizacja_tyg)*>
+<!ELEMENT w_czas_trwania_max_objawow (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_lekow_po_4_l (#PCDATA)>
+<!ELEMENT w_max_stezenie_szczepionki (#PCDATA)>
+<!ELEMENT kryt_igesw_3 (#PCDATA)>
+<!ELEMENT pacjent (#PCDATA | wywiad | w1 | w2 | w3 | w4 | w5 | w6 | w7 | wk | testy_1 | testy_2 | testy_3 | other)*>
+<!ELEMENT w_procent_zmiennosci_po_beta (#PCDATA)>
+<!ELEMENT w_suma_lekow (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_objawow_po_3_l (#PCDATA)>
+<!ELEMENT w_fef_5-75 (#PCDATA)>
+<!ELEMENT procent_poprawa_po_roku (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_lekow_po_3_l (#PCDATA)>
+<!ELEMENT procent_rozn_sumy_objawow_po_roku (#PCDATA)>
+<!ELEMENT w_neutrofile (#PCDATA)>
+<!ELEMENT na_co_pierwsze_chorowal (#PCDATA)>
+<!ELEMENT w_wysypki_skorne (#PCDATA)>
+<!ELEMENT ige_swtr2 (#PCDATA)>
+<!ELEMENT w_ecp (#PCDATA)>
+<!ELEMENT ige_swtr1 (#PCDATA)>
+<!ELEMENT w_sposob_zluszczania (#PCDATA)>
+<!ELEMENT w_sterydy_wziewnie (#PCDATA)>

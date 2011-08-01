@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<pola>
+	
+   <pole codename="numer_porzadkowy" id="1" priority="1" other="1"/>
+	
+   <pole codename="grupa_lub_kontrola" id="2" priority="1" other="2"/>
+	
+   <pole codename="grupa_pacjentow" id="3" priority="1" wywiad="3">
+   	1 - leczony
+	2 - nie leczony (grupa kontrolna)
+	3 - zdrowy nie leczony (grupa kontrolna)
+   </pole>
+	
+   <pole codename="podzial_na_4_grupy" id="4" priority="1" other="4"/>
+	
+   
+	
+   <pole codename="wiek_w_latach" id="6" priority="1" wywiad="6"/>
+	
+   
+	
+   <pole codename="rozpoznanie" id="8" priority="1" wywiad="8"/>
+	
+   <pole codename="natezenie_astmy_rozpoznanie" id="9" priority="1" wywiad="9"/>
+	
+   <pole codename="na_co_pierwsze_chorowal" id="10" priority="1" wywiad="10"/>
+	
+   
+	
+   <pole codename="w_czas_choroby_do_it_nos" id="12" priority="1" wywiad="12"/>
+	
+   <pole codename="w_czas_choroby_do_it_astma" id="13" priority="1" wywiad="13"/>
+	
+   <pole codename="w_obciazajacy_wywiad_rodzinny" id="14" priority="2" wywiad="14"/>
+	
+   <pole codename="obciazenie_rodzinne" id="15" priority="2" wywiad="15"/>
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="w_eozynofilia" id="19" priority="1" w1="19" w2="62" w3="104" w4="150" w5="196" w6="242" w7="284" wk="399"/>
+	
+   <pole codename="w_eozynofilia_bezw" id="20" priority="1" w1="20" w2="63" w3="105" w4="151" w5="197" w6="243" w7="285" wk="400"/>
+	
+   <pole codename="w_ecp" id="21" priority="1" w1="21" w2="64" w3="106" w4="152" w5="198" w6="244" w7="286" wk="401"/>
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="w_eozynofile" id="25" priority="1" w1="25" w2="68" w3="110" w4="156" w5="202" w6="248" w7="290" wk="405"/>
+	
+   <pole codename="w_eozynofile_zdegranulowane" id="26" priority="1" w1="26" w2="69" w3="111" w4="157" w5="203" w6="249" w7="291" wk="406"/>
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="w_fev" id="31" priority="1" w1="31" w2="74" w3="116" w4="162" w5="208" w6="254" w7="296" wk="411"/>
+	
+   
+	
+   
+	
+   <pole codename="w_procent_zmiennosci_po_beta" id="34" priority="2" w1="34" w2="77" w3="119" w4="165" w5="211" w6="257" w7="342" wk="414"/>
+	
+   <pole codename="w_poprawa_kodowana" id="35" priority="2"/>
+	
+   
+	
+   <pole codename="w_swiszczacy_oddech" id="37" priority="1" w2="37" w3="83" w4="125" w5="171" w6="217" w7="263" wk="374"/>
+	
+   <pole codename="w_kaszel" id="38" priority="1" w2="38" w3="84" w4="126" w5="172" w6="218" w7="264" wk="375"/>
+	
+   <pole codename="w_dusznosc" id="39" priority="1" w2="39" w3="85" w4="127" w5="173" w6="219" w7="265" wk="376"/>
+	
+   <pole codename="w_swiad_spojowek" id="40" priority="1" w2="40" w3="86" w4="128" w5="174" w6="220" w7="266" wk="377"/>
+	
+   <pole codename="w_lzawienie_oczu" id="41" priority="1" w2="41" w3="87" w4="129" w5="175" w6="221" w7="267" wk="378"/>
+	
+   <pole codename="w_wyciek_z_nosa" id="42" priority="1" w2="42" w3="88" w4="130" w5="176" w6="222" w7="268" wk="379"/>
+	
+   <pole codename="w_zatkanie_nosa" id="43" priority="1" w2="43" w3="89" w4="131" w5="177" w6="223" w7="269" wk="380"/>
+	
+   <pole codename="w_napady_kichania" id="44" priority="1" w2="44" w3="90" w4="132" w5="178" w6="224" w7="420" wk="381"/>
+	
+   <pole codename="w_wysypki_skorne" id="45" priority="1" w2="45" w3="91" w4="133" w5="179" w6="225" wk="382"/>
+	
+   <pole codename="w_czestosc_infekcji_w_roku" id="46" priority="1" w2="46" w3="92" w4="134" w5="180" w6="226" wk="383"/>
+	
+   <pole codename="w_hospitalizacja__w_tyg" id="47" priority="1"/>
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="w_ig_e_swoiste_trawy" id="59" priority="1" w2="59" w4="147" w5="193" w6="239" w7="281" wk="396"/>
+	
+   <pole codename="w_ig_e_swoiste_trawy_klasa" id="60" priority="1" w2="60" w4="148" w5="194" w6="240" w7="282" wk="397"/>
+	
+   <pole codename="w_max_stezenie_szczepionki" id="61" priority="1" w2="78" w3="120" w4="166" w5="212" w6="258" wk="415"/>
+	
+   <pole codename="w_dawka_szczepionki" id="62" priority="1" w2="79" w3="121" w4="167" w5="213" w6="259" wk="416"/>
+	
+   
+	
+   <pole codename="w_czas_trwania_objawow" id="64" priority="1" w2="81" w3="123" w4="169" w5="215" w6="261" w7="340" wk="418"/>
+	
+   <pole codename="w_czas_trwania_max_objawow" id="65" priority="1" w2="82" w3="124" w4="170" w5="216" w6="262" w7="341" wk="419"/>
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="testy_trawy_i" id="69" priority="1" testy_1="301" testy_2="309" testy_3="317"/>
+	
+   <pole codename="testy_trawy_ii" id="70" priority="1" testy_1="302" testy_2="310" testy_3="318"/>
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="w_suma_objawow" id="76" priority="2" w2="324" w3="325" w4="326" w5="327" w6="328" w7="329"/>
+	
+   <pole codename="w_suma_lekow" id="77" priority="2" w2="330" w3="331" w4="332" w5="333" w6="334" w7="335"/>
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   <pole codename="pokwitanie2" id="114" priority="1" other="421"/>
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+	
+   
+   
+</pola>

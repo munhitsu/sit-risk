@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="57"
+   name=""
+   committed-date="2005-02-28T21:57:00.455457Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim/parser"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   revision="57"/>
+<entry
+   committed-rev="56"
+   name="RangesSelector.java"
+   text-time="2005-02-28T22:20:35.453125Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="bc0eb15ee3174c3873a7987b2a89a345"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.453125Z"/>
+<entry
+   name="complete"
+   kind="dir"
+   schedule="delete"/>
+<entry
+   committed-rev="56"
+   name="Completer.java"
+   text-time="2005-02-28T22:20:35.500000Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="e723d358ce99971b332af1e061256dcc"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.734375Z"/>
+<entry
+   committed-rev="56"
+   name="Teacher.java"
+   text-time="2005-02-28T22:20:35.546875Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="0814de08d19fa59fff9903f97089272a"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.765625Z"/>
+<entry
+   name="util"
+   kind="dir"
+   schedule="delete"/>
+<entry
+   committed-rev="56"
+   name="Executor.java"
+   text-time="2005-02-28T22:20:35.578125Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="3a5623b0864939be300796cadc45b8e4"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:35.406250Z"/>
+</wc-entries>

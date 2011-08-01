@@ -1,0 +1,130 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--schema-processing/validation-api
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Controlling Validation from Java</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Controlling Validation from Java">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>Controlling Validation from Java</h1>
+      
+      
+      <p>The easiest way to control validation from a Java application is to run a JAXP
+         identity transformation, having first set the option to perform schema validation.
+         The following code (from the sample application <code>QuickValidator.java</code>) illustrates this:
+      </p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>
+  try {
+      System.setProperty("javax.xml.transform.TransformerFactory",
+                         "com.saxonica.SchemaAwareTransformerFactory");
+      TransformerFactory factory = TransformerFactory.newInstance();
+      factory.setAttribute(FeatureKeys.SCHEMA_VALIDATION, Boolean.TRUE);
+      Transformer trans = factory.newTransformer();
+      StreamSource source = new StreamSource(new File(args[0]).toURI().toString());
+      SAXResult sink = new SAXResult(new DefaultHandler());
+      trans.transform(source, sink);
+  } catch (TransformerException err) {
+      System.err.println("Validation failed");
+  }
+</code></pre></div>
+      
+      
+      <p>If you set an <code>ErrorListener</code> on the <code>TransformerFactory</code>, then you can control
+         the way that error messages are output.
+      </p>
+      
+      
+      <p>If you want to validate against a schema without hard-coding the URI of the schema into the source
+         document, you can do this by pre-loading the schema into the <code>TransformerFactory</code>. This extended
+         example (again from the sample application <code>QuickValidator.java</code>) illustrates this:
+      </p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>
+  try {
+      System.setProperty("javax.xml.transform.TransformerFactory",
+                         "com.saxonica.SchemaAwareTransformerFactory");
+      TransformerFactory factory = TransformerFactory.newInstance();
+      factory.setAttribute(FeatureKeys.SCHEMA_VALIDATION, Boolean.TRUE);
+      if (args.length &gt; 1) {
+          StreamSource schema = new StreamSource(new File(args[1]).toURI().toString());
+          ((SchemaAwareTransformerFactory)factory).addSchema(schema);
+      }
+      Transformer trans = factory.newTransformer();
+      StreamSource source = new StreamSource(new File(args[0]).toURI().toString());
+      SAXResult sink = new SAXResult(new DefaultHandler());
+      trans.transform(source, sink);
+  } catch (TransformerException err) {
+      System.err.println("Validation failed");
+  }
+</code></pre></div>
+      
+      
+      <p>You can preload as many schemas as you like using the <code>addSchema</code> method. Such schemas are parsed,
+         validated, and compiled once, and can be used as often as you like for validating multiple source documents. You
+         cannot unload a schema once it has been loaded. If you want to remove or replace a schema, start afresh with a
+         new <code>TransformerFactory</code>.
+      </p>
+      
+      
+      <p>Behind the scenes, the <code>TransformerFactory</code> uses a <code>Configuration</code> object to hold all
+         the configuration information. The basic Saxon product uses the class <code>net.sf.saxon.TransformerFactoryImpl</code>
+         for the <code>TransformerFactory</code>, and <code>net.sf.saxon.Configuration</code> for the underlying
+         configuration information. The schema-aware product subclasses these with <code>com.saxonica.SchemaAwareTransformerFactory</code>
+         and <code>com.saxonica.SchemaAwareConfiguration</code> respectively. 
+         You can get hold of the configuration object by casting the <code>TransformerFactory</code>
+         to a Saxon <code>TransformerFactorImpl</code> and calling the <code>getConfiguration()</code> method. This
+         gives you more precise control, for example it allows you to retrieve the <code>Schema</code> object containing
+         the schema components for a given target namespace, and to inspect the compiled schema to establish its properties.
+         See the JavaDoc documentation for further details.
+      </p>
+      
+      
+      <p><i>Saxon currently implements its own API for access to the schema components. This API should be regarded as
+            temporary. In the longer term, it is likely that Saxon will offer an API for schema access that has been proposed
+            in a member submission to W3C.</i></p>
+      
+      
+      <p>The programming approach outlined above, of using an identity transformer, 
+         is suitable for a wide class of applications. For example,
+         it enables you to insert a validation step into a SAX-based pipeline. However, for finer control, there are
+         lower-level interfaces available in Saxon that you can also use. See for example the JavaDoc for the
+         <code>SchemaAwareConfiguration</code> class, which includes methods such as <code>getElementValidator</code>. This
+         constructs a <code>Receiver</code> which acts as a validating XML event filter. This can be inserted into a pipeline
+         of <code>Receivers</code>. Saxon also provides classes to bridge between SAX events and <code>Receiver</code>
+         events: <code>ReceivingContentHandler</code> and <code>ContentHandlerProxy</code> respectively.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="validation-api.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="satransformcmd.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

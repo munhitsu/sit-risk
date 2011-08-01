@@ -1,0 +1,57 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--extensions/functions/serialize
+		Generated at 8 June 2004 at 13:52-->
+      <title>Saxonica: XSLT and XQuery Processing: saxon:serialize()</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: saxon:serialize()">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../../" + section + "_menu.html";
+                parent.frames['content'].location="../../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../../" + section + "_menu.html";
+                parent.frames['content'].location="../../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      <h1>saxon:serialize()</h1>
+      
+      
+      <p><b>serialize(node, format)</b></p>
+      
+      
+      <p>This function takes two arguments: the first is a node (generally a document or element node)
+         to be serialized. The second is the name of an <code>xsl:output</code> element in the stylesheet. 
+         The second argument must be known at compile time (it will typically be supplied as a string literal.)
+         The function serializes the specified document, or the subtree rooted at the specified element, according
+         to the parameters specified in the named <code>xsl:output</code> element, and returns the serialized 
+         document as a string.
+      </p>
+      
+      
+      <p>This function is useful where the XSLT stylesheet wants to manipulate the serialized output,
+         for example by embedding it as CDATA inside another XML document, or prefixing it with a DOCTYPE
+         declaration, or inserting it into a non-XML output file.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a href="serialize.html" class="nav" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="../functions.html">Up</a>&nbsp;&nbsp;<a class="nav" href="sum.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

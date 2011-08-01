@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="joone">
+	<target name="init">
+		<tstamp/>
+		<property environment="env"/>
+		<property name="base" value="w:/mgr/workspace/jim"/>
+		<property name="data.org" value="${base}/data.original"/>
+		<property name="data.pre" value="${base}/data.preprocessed"/>
+		<property name="data.conf" value="${base}/data.conf"/>
+		<property name="data.train" value="${base}/data.training"/>
+		<property name="data.chart" value="${base}/data.chart"/>
+		<property name="data.doc" value="${base}/data.document"/>
+		<property name="bin" value="${base}/bin"/>
+		<property name="build" value="${base}/build"/>
+		<property name="lib" value="${base}/lib"/>
+		<property name="perl" value="C:\soft\Perl\bin\perl.exe"/>
+		<property name="pola.xml" value="pola-edited.xml"/> <!--edit according to your needs-->
+		<property name="pola.xml.full" value="${data.conf}/${pola.xml}"/>
+		<property name="dane.xml" value="dane-uzupelnione.xml"/>
+		<property name="dane.xml.full" value="${data.pre}/${dane.xml}"/>
+		<property name="priority" value="100"/>
+<!--		<property name="saxon.jar" value="${lib}/saxon7.jar"/>-->
+		<path id="saxon.class.path">
+			<pathelement location="${lib}/"/>
+			<pathelement path="${lib}/saxon8.jar"/>
+		</path>
+		<path id="jim.class.path">
+			<pathelement path="${build}"/>
+			<pathelement path="${lib}/dom4j-full.jar"/>
+			<pathelement path="${lib}/jgap.jar"/>
+			<pathelement path="${lib}/joone-engine.jar"/>
+			<pathelement path="${lib}/applib.jar"/>
+			<pathelement path="${lib}/log4j.jar"/>
+			<pathelement path="${lib}/saxon8.jar"/>
+		</path>
+		<mkdir dir="${data.pre}"/>
+		<mkdir dir="${data.train}"/>
+		<mkdir dir="${data.doc}"/>
+		
+		<uptodate property="dane.html.notRequired" targetfile="${data.pre}/dane.html">
+			<srcfiles dir="${bin}" includesfile="${bin}/dane2html.pl"/>
+			<srcfiles dir="${data.org}" includesfile="${data.org}/DANE.TXT"/>
+		</uptodate>
+		<uptodate property="pola-all.xml.notRequired" targetfile="${data.pre}/pola-all.xml">
+			<srcfiles dir="${bin}" includesfile="${bin}/pola2xml.pl"/>
+			<srcfiles dir="${data.org}" includesfile="${data.org}/NAZWY-ISO.TXT"/>
+		</uptodate>
+		<uptodate property="pola-ranges.xml.notRequired" targetfile="${data.conf}/pola-ranges.xml">
+			<srcfiles dir="${data.conf}" includesfile="${dane.xml.full}"/>
+			<srcfiles dir="${data.conf}" includesfile="${pola.xml.full}"/>
+			<srcfiles dir="${build}" includes="*"/>
+		</uptodate>
+	</target>
+	
+	<target name="clean" depends="init">
+		<delete dir="${data.pre}" failonerror="false"/>
+		<delete dir="${data.train}" failonerror="false"/>
+		<delete dir="${data.doc}" failonerror="false"/>
+	</target>
+	
+	<target name="dane.html" depends="init" unless="dane.html.notRequired">
+		<echo message="creating: dane.html"/>
+		
+		<exec executable="${perl}" output="${data.pre}/dane.html">
+			<arg value="${bin}/dane2html.pl"/>
+			<arg value="${data.org}/DANE.TXT"/>
+		</exec>
+	</target>
+	
+	<target name="pola-all.xml" depends="init" unless="pola-all.xhtml.notRequired">
+		<echo message="creating: pola-all.xml"/>
+		<exec executable="${perl}" output="${data.pre}/pola-all.xml">
+			<arg value="${bin}/pola2xml.pl"/>
+			<arg value="${data.org}/NAZWY-ISO.TXT"/>
+		</exec>
+	</target>
+	
+	<target name="pola-combined.xml" depends="init,pola-all.xml">
+		<echo message="using: pola-all.xml + pola-uzycie.xml "/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/pola-all.xml" out="${data.pre}/pola-combined.xml" style="${bin}/pola-combine.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	
+	<target name="pola-edited.xml" depends="init">
+		<echo message="pola-edited.xml was created by editing pola-combined.xml file"/>
+		<echo message="you can call pola-combined.xml target and provide your modifications"/>
+	</target>
+	
+	<target name="pola-limited.xml" depends="init">
+		<antcall target="${pola.xml}"/>
+		<echo message="target removes unwanted fields from ${pola.xml}"/>
+		<echo message="warning: target is deprecated"/>
+		<echo message="using: ${pola.xml}"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.train}" in="${pola.xml.full}" out="${data.pre}/pola-limited.xml" style="${bin}/pola-limit.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="priorityUsed" expression="${priority}"/>
+		</style>
+	</target>
+	
+	<target name="dane.xml" depends="init,dane.html">
+		<antcall target="${pola.xml}"/>
+		<echo message="using: ${pola.xml} + dane.html"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.train}" in="${data.pre}/dane.html" out="${data.pre}/dane.xml" style="${bin}/dane.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="polaFile" expression="${pola.xml.full}"/>
+			<param name="grupyFile" expression="${data.conf}/grupy.xml"/>
+			<param name="priorityUsed" expression="${priority}"/>
+		</style>
+	</target>
+	
+	<target name="dane-combined.xml" depends="init,dane.xml">
+		<echo message="using: dane.xml + dane-podzial.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/dane.xml" out="${data.pre}/dane-combined.xml" style="${bin}/dane-combine.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	
+	<target name="dane-usrednione.xml" depends="init,dane-combined.xml">
+		<echo message="using: dane-combined.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/dane-combined.xml" out="${data.pre}/dane-usrednione.xml" style="${bin}/dane-usrednianie.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	
+	<target name="dane-uzupelnione.xml" depends="init,dane-usrednione.xml">
+		<echo message="using: dane-usrednione.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/dane-combined.xml" out="${data.pre}/dane-uzupelnione.xml" style="${bin}/dane-uzupelnianie.xslt">
+			<param name="usrednioneFile" expression="${data.pre}/dane-usrednione.xml"/>
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+
+<!--	<target name="dane-sumy.xml" depends="init,dane-uzupelnione.xml">
+		<echo message="using: dane-uzupelnione.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/dane-uzupelnione.xml" out="${data.pre}/dane-sumy.xml" style="${bin}/dane-sumy.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>-->
+
+	
+	<target name="prepare-training" depends="init">
+		<antcall target="${dane.xml}"/>
+		<echo message="using: ${dane.xml}"/>
+		
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.train}" in="${dane.xml.full}" out="${data.train}/prepare-training-log.html" style="${bin}/prepare-training.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	
+<!--	<target name="build" depends="prepare-training">
+	</target>-->
+	<target name="mod" depends="init">
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.train}" in="${data.pre}/dane-uzupelnione.xml" out="${data.pre}/dane-mod.xml" style="${bin}/dane-mod.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	<target name="chart" depends="init">
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.chart}" in="${data.pre}/dane-uzupelnione-splines.xml" out="${data.chart}/chart.svg" style="${bin}/wykres.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</style>
+	</target>
+	
+	<target name="build" depends="mod"></target>
+	
+	<target name="trial" depends="init">
+		<echo message="using: pola.xml + dane.html"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.pre}/dane.html" out="${data.pre}/dane-trial.xml" style="${bin}/dane.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="priorityUsed" expression="10"/>
+			<param name="polaFile" expression="${data.conf}/pola-edited.xml"/>
+			<param name="grupyFile" expression="${data.conf}/grupy.xml"/>
+		</style>
+	</target>
+	
+	<target name="pola-ranges.xml" depends="dane.xml,pola-edited.xml" unless="pola-ranges.xml.notRequired">
+		<echo message="using: pola-ranges.xml"/>
+		<echo message="classpath: ${build}"/>
+		<java classname="org.jim.parser.RangesSelector" fork="yes">
+			<classpath refid="jim.class.path"/>
+			<arg value="${dane.xml.full}"/>
+			<arg value="${pola.xml.full}"/>
+			<arg value="${data.conf}/pola-ranges.xml"/>
+			<arg value="5"/>
+		</java>
+	</target>
+	
+	<target name="tabela-pola.html" depends="init,pola-ranges.xml">
+		<echo message="using: pola-ranges.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.conf}/pola-ranges.xml" out="${data.doc}/tabela-pola.html" style="${bin}/pola-tabela.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="grupyFile" expression="${data.conf}/grupy.xml"/>
+		</style>
+	</target>
+	
+	<target name="pola-merged-trial.xml" depends="init">
+		<echo message="using: pola-uzycie.xml pola-edited.xml"/>
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="${data.conf}/pola-uzycie.xml" out="${data.conf}/pola-merged-trial.xml" style="${bin}/pola-merge.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="addFile" expression="${data.conf}/pola-edited.xml"/>
+			<param name="grupyFile" expression="${data.conf}/grupy.xml"/>
+		</style>
+	</target>
+	
+	<target name="statistica-htm" depends="init">
+		<style processor="trax" classpathref="saxon.class.path" basedir="${data.pre}" in="./data.preprocessed/dane-completed.xml" out="${data.pre}/statistica-input.htm" style="${bin}/dane2statistica-htm.xslt">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="rowsXPath" expression="//pacjenci/pacjent[(position() &lt;= 32)]"/>
+			<param name="learningXPath" expression="*[self::wywiad or self::w1 or self::w2]/*"/>
+			<param name="validatingXPath" expression="computed/*"/>
+			<param name="polaFile" expression="${data.conf}/pola-ranges.xml"/>
+		</style>
+	</target>
+</project>
+

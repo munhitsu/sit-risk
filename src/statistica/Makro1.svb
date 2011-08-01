@@ -1,0 +1,322 @@
+'#Reference {C9E29017-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29032-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29036-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29035-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2902E-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2902A-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2902D-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29030-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2902B-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29029-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29028-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29024-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2902C-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29022-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29010-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29020-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29005-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29006-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29008-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900F-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29012-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29015-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29016-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29021-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29018-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29019-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2901A-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2901B-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2901C-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2901D-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29014-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29013-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29011-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900D-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900C-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900A-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29009-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29004-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29007-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900E-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E2900B-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29001-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29003-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+'#Reference {C9E29002-3D45-11D4-9FF4-00C04FA0D540}#1.0#0#
+Option Base 1
+Sub Main
+
+Dim newanalysis As Analysis
+Set newanalysis = Analysis (scNeuralNetworks, ActiveDataSet)
+
+With newanalysis.Dialog
+    .VariablesAndTypes = "3-4 7-9 11-17 | 2 5-6 10 45 | 1"
+    .Variables = "45 | 2-17"
+    .UseTrainingCode = True
+    .TrainingCode = "nauka"
+    .UseSelectionCode = True
+    .SelectionCode = "walidacja"
+    .UseTestCode = True
+    .TestCode = "test"
+    .UseIgnoreCode = False
+    .TypeOfAnalysis = scSNNIntelligentProblemSolver
+    .IssueMissingDataWarning = False
+    .ApplyMemoryLimit = True
+    .MemoryLimit = 30
+End With
+
+newanalysis.Run 
+
+With newanalysis.Dialog
+    .IPSRunTimeBasedOnTimeDuration = True
+    .NoOfHours = 0
+    .NoOfMinutes = 15
+    .NoOfNetworksRetainedByIPS = 10
+    .FormEnsemble = False
+    .SelectSubsetOfIndependents = True
+    .BalancePerformance = True
+    .IncreaseFileSize = True
+    .SaveCopyToFile = False
+    .LinearNetwork = True
+    .PNNNetwork = True
+    .RBFNetwork = True
+    .MLP3Network = True
+    .MLP4Network = True
+    .RBFMinComplexity = 1
+    .RBFMaxComplexity = 7
+    .MLP3MinComplexity = 1
+    .MLP3MaxComplexity = 14
+    .MLP4MinComplexity = 1
+    .MLP4MaxComplexity = 14
+    .MLP4Layer3MinComplexity = 1
+    .MLP4Layer3MaxComplexity = 14
+    .CalculateMinimumLossThreshold = True
+    .LossValue = 1
+    .TreatAsTimeSeries = False
+    .ClassificationEntropyBased = True
+    .ClassificationSumSquaredLogistic = True
+    .FeedbackImprovedNetworksOnly = True
+    .GenerateSpreadsheet = True
+    .DisplayTerminalMessage = False
+    .CopyTerminalMessageToClipboard = True
+End With
+
+Set optionsdialog = newanalysis.Dialog.GetUserCaseSelection
+With optionsdialog
+    .SelectSpecifiedCases = True
+    .UserSpecifiedCases = "1-32"
+End With
+
+newanalysis.Dialog.SetUserCaseSelection optionsdialog
+Set optionsdialog = Nothing
+
+Set optionsdialog = newanalysis.Dialog.GetSampling
+With optionsdialog
+    .CasewiseDeletionOfMD = True
+    .AdvancedRandomSelectionOfSubsets = True
+    .RandomFixAllSubsets = True
+    .AssignmentOfSubsetsFromVariable = True
+    .FromSubsetVariable = "kategoria_elementu"
+    .TrainingSubsetSizeBootstrap = 19
+    .TestSubsetSizeBootstrap = 10
+End With
+
+newanalysis.Dialog.SetSampling optionsdialog
+Set optionsdialog = Nothing
+
+newanalysis.Run 
+
+With newanalysis.Dialog
+    .UseOverallSubsets = True
+    .GenerateSummaryStatistics = True
+    .GenerateConfusionMatrix = True
+    .ShowPredictions = True
+    .ShowConfidenceLevels = False
+    .ShowCodebookVector = False
+    .ShowWiningNeuron = False
+    .IncludeObservedInPredictionsSpreadsheet = True
+    .IncludeIndependentsInPredictionsSpreadsheet = False
+    .IncludeSubsetVariableInPredictionsSpreadsheet = False
+    .IncludeUserVariablesInPredictionsSpreadsheet = False
+    .ShowRawResiduals = True
+    .ShowResidualsSquared = False
+    .ShowAbsoluteResiduals = False
+    .ShowStandardResiduals = False
+    .IncludePredictionsInResidualsSpreadsheet = True
+    .IncludeObservedInResidualsSpreadsheet = False
+    .IncludeIndependentsInResidualsSpreadsheet = False
+    .IncludeSubsetVariableInResidualsSpreadsheet = False
+    .IncludeUserVariablesInResidualsSpreadsheet = False
+    .ShowRatioAndRankingSensitivityMetrics = True
+    .SelectXaxisVariable = 1
+    .SelectYaxisVariable = 0
+    .CasewiseDeletionOfMD = True
+End With
+
+Set optionsdialog = newanalysis.Dialog.GetUserCaseSelection
+With optionsdialog
+    .SelectSpecifiedCases = True
+    .UserSpecifiedCases = "1-32"
+End With
+
+newanalysis.Dialog.SetUserCaseSelection optionsdialog
+Set optionsdialog = Nothing
+
+Set optionsdialog = newanalysis.Dialog.GetMultipleModelSelection
+With optionsdialog
+    .ShowOnlyStandaloneNetworks = True
+    .SelectTheEnsembleItself = True
+    .SelectedModels = "1-10 "
+End With
+
+newanalysis.Dialog.SetMultipleModelSelection optionsdialog
+Set optionsdialog = Nothing
+
+newanalysis.RouteOutput(newanalysis.Dialog.PrintDescriptiveStatisticsSpreadsheet).Visible = True
+
+newanalysis.RouteOutput(newanalysis.Dialog.PrintPredictionsSpreadsheet).Visible = True
+
+With newanalysis.Dialog
+    .IncludeSubsetVariableInPredictionsSpreadsheet = True
+End With
+
+newanalysis.RouteOutput(newanalysis.Dialog.PrintPredictionsSpreadsheet).Visible = True
+
+With newanalysis.Dialog
+    .ShowConfidenceLevels = True
+End With
+
+newanalysis.RouteOutput(newanalysis.Dialog.PrintPredictionsSpreadsheet).Visible = True
+
+newanalysis.Dialog.GotoResponseGraph 
+
+With newanalysis.Dialog
+    .SelectFixedIndependent = 0
+    .UseLagValue = 0
+    .MinimumValue = 5
+    .MaximumValue = 13
+    .NumberOfSamples = 25
+    .PlotConfidence = True
+    .PlotMultiple = False
+    .ChangeCaseNo = 1
+    .RunUserDefinedInput = "(X)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(X)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(X)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)" + vbLf + _
+	"(MISSING)"
+End With
+
+Set optionsdialog = newanalysis.Dialog.GetMultipleModelSelection
+With optionsdialog
+    .ShowOnlyStandaloneNetworks = True
+    .SelectTheEnsembleItself = True
+    .SelectedModels = "1-10 "
+End With
+
+newanalysis.Dialog.SetMultipleModelSelection optionsdialog
+Set optionsdialog = Nothing
+
+newanalysis.GoBack 
+
+With newanalysis.Dialog
+    .UseOverallSubsets = True
+    .GenerateSummaryStatistics = True
+    .GenerateConfusionMatrix = True
+    .ShowPredictions = True
+    .ShowConfidenceLevels = True
+    .ShowCodebookVector = False
+    .ShowWiningNeuron = False
+    .IncludeObservedInPredictionsSpreadsheet = True
+    .IncludeIndependentsInPredictionsSpreadsheet = False
+    .IncludeSubsetVariableInPredictionsSpreadsheet = True
+    .IncludeUserVariablesInPredictionsSpreadsheet = False
+    .ShowRawResiduals = True
+    .ShowResidualsSquared = False
+    .ShowAbsoluteResiduals = False
+    .ShowStandardResiduals = False
+    .IncludePredictionsInResidualsSpreadsheet = True
+    .IncludeObservedInResidualsSpreadsheet = False
+    .IncludeIndependentsInResidualsSpreadsheet = False
+    .IncludeSubsetVariableInResidualsSpreadsheet = False
+    .IncludeUserVariablesInResidualsSpreadsheet = False
+    .ShowRatioAndRankingSensitivityMetrics = True
+    .SelectXaxisVariable = 1
+    .SelectYaxisVariable = 0
+    .CasewiseDeletionOfMD = True
+End With
+
+Set optionsdialog = newanalysis.Dialog.GetUserCaseSelection
+With optionsdialog
+    .SelectSpecifiedCases = True
+    .UserSpecifiedCases = "1-32"
+End With
+
+newanalysis.Dialog.SetUserCaseSelection optionsdialog
+Set optionsdialog = Nothing
+
+Set optionsdialog = newanalysis.Dialog.GetMultipleModelSelection
+With optionsdialog
+    .ShowOnlyStandaloneNetworks = True
+    .SelectTheEnsembleItself = True
+    .SelectedModels = "1-10 "
+End With
+
+newanalysis.Dialog.SetMultipleModelSelection optionsdialog
+Set optionsdialog = Nothing
+
+newanalysis.RouteOutput(newanalysis.Dialog.PlotROCCurve).Visible = True
+
+newanalysis.Dialog.GotoNetworkIllustration 
+
+With newanalysis.Dialog
+    .CaseChange = 1
+    .RunUserDefinedInput = "(1)" + vbLf + _
+	"(14,000000)" + vbLf + _
+	"(2,000000)" + vbLf + _
+	"(2)" + vbLf + _
+	"(5,000000)" + vbLf + _
+	"(0,000000)" + vbLf + _
+	"(7,000000)" + vbLf + _
+	"(2)" + vbLf + _
+	"(2,000000)" + vbLf + _
+	"(114,000000)" + vbLf + _
+	"(26,920000)" + vbLf + _
+	"(3,000000)" + vbLf + _
+	"(2,000000)" + vbLf + _
+	"(123,000000)" + vbLf + _
+	"(2,000000)"
+    .DisplayIllustrationInColor = True
+    .ModelListView = "10"
+End With
+
+Set optionsdialog = newanalysis.Dialog.GetMultipleModelSelection
+With optionsdialog
+    .ShowOnlyStandaloneNetworks = True
+    .SelectTheEnsembleItself = True
+    .SelectedModels = "1-10 "
+End With
+
+newanalysis.Dialog.SetMultipleModelSelection optionsdialog
+Set optionsdialog = Nothing
+
+newanalysis.RouteOutput(newanalysis.Dialog.PlotAllNetworkIllustrationGraph).Visible = True
+
+newanalysis.RouteOutput(newanalysis.Dialog.PlotAllNetworkIllustrationGraph).Visible = True
+
+End Sub
+
+'STATISTICA MACRO FILE VERSION 4
+'BEGINPROPERTIES
+'NAME=Makro1
+'DESCRIPTION=Zapis makra 3/26/2005
+'LANGUAGE=0
+'ENDPROPERTIES

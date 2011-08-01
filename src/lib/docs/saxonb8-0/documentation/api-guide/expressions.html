@@ -1,0 +1,221 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--api-guide/expressions
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Using XPath Expressions</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Using XPath Expressions">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>Using XPath Expressions</h1>
+      
+      
+      
+      <p>Saxon provides an API for executing XPath expressions. The API is loosely modelled
+         on the proposed DOM Level 3 API for XPath. For full documentation, see the Javadoc description of package
+         <code>net.sf.saxon.xpath</code>. A sample application using this API is available: it is called <code>XPathExample.java</code>,
+         and can be found in the <code>samples/java</code> directory. To run this application, see the instructions
+         in <a class="bodylink" href="javascript:topage('samples', 'shakespeare')">Shakespeare XPath Sample Application</a>.
+      </p>
+      
+      
+      <p>This API is based on the class <code>net.sf.saxon.xpath.XPathEvaluator</code>. This class provides a few
+         simple configuration interfaces to set the source document, the static context, and the context node,
+         plus a number of methods for evaluating XPath expressions.
+      </p>
+      
+      
+      <p>Here is a simple example of the use of this class:</p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>// Create an XPathEvaluator and set the source document
+
+InputSource is = new InputSource(new File(filename).toURL().toString());
+SAXSource ss = new SAXSource(is);
+XPathEvaluator xpe = new XPathEvaluator(ss);
+
+// Declare a variable for use in XPath expressions
+
+StandaloneContext sc = (StandaloneContext)xpe.getStaticContext();
+Variable wordVar = sc.declareVariable("word", "");
+
+// Compile the XPath expressions used by the application
+
+XPathExpression findLine =
+    xpe.createExpression("//LINE[contains(., $word)]");
+XPathExpression findLocation =
+    xpe.createExpression("concat(ancestor::ACT/TITLE, ' ', ancestor::SCENE/TITLE)");
+XPathExpression findSpeaker =
+    xpe.createExpression("string(ancestor::SPEECH/SPEAKER[1])");
+
+// Create a reader for reading input from the console
+
+BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+// Loop until the user enters "." to end the application
+
+while (true) {
+
+    // Prompt for input
+    System.out.println("\n&gt;&gt;&gt;&gt; Enter a word to search for, or '.' to quit:\n");
+
+    // Read the input
+    String word = in.readLine().trim();
+    if (word.equals(".")) {
+        break;
+    }
+    if (!word.equals("")) {
+
+        // Set the value of the XPath variable
+        wordVar.setValue(word);
+
+        // Find the lines containing the requested word
+        List matchedLines = findLine.evaluate();
+
+        // Process these lines
+        boolean found = false;
+        for (Iterator iter = matchedLines.iterator(); iter.hasNext();) {
+
+            // Note that we have found at least one line
+            found = true;
+
+            // Get the next matching line
+            NodeInfo line = (NodeInfo)iter.next();
+
+            // Find where it appears in the play
+            findLocation.setContextNode(line);
+            System.out.println("\n" + findLocation.evaluateSingle());
+
+            // Find out who the speaker of this line is
+            findSpeaker.setContextNode(line);
+
+            // Output the name of the speaker and the content of the line
+            System.out.println(findSpeaker.evaluateSingle() + ":  " + line.getStringValue());
+        }
+
+        // If no lines were found, say so
+        if (!found) {
+            System.err.println("No lines were found containing the word '" + word + "'");
+        }
+    }
+}
+
+// Finish when the user enters "."
+System.out.println("Finished.");
+</code></pre></div>
+      
+      
+      <p>The <code>XPathEvaluator</code> must be initialized with a source document, which can be supplied
+         as a JAXP <code>Source</code> object. Any kind of <code>Source</code> object recognized by Saxon is
+         allowed (including, for example, a JDOM source). This can be supplied either in the constructor for the
+         <code>XPathEvaluator</code>, or through the <code>setSource</code> method. The <code>setSource</code> 
+         method returns a <code>net.sf.saxon.om.DocumentInfo</code> object representing the root of the
+         tree for the document: this is useful if you want to use some of the more advanced features of the 
+         Saxon API, but you can ignore it if you don't need it.
+      </p>
+      
+      
+      <p>There are two methods for direct evaluation of XPath expressions,
+         <code>evaluate()</code> which returns a List containing the result of the expression (which in general is a sequence),
+         and <code>evaluateSingle()</code> which returns the first item in the result (this is appropriate where it is known
+         that the result will be single-valued). The results are returned as <code>NodeInfo</code> objects in the case of nodes,
+         or as objects of the most appropriate Java class in the case of atomic values: for example, Boolean, Double,
+         or String in the case of the traditional XPath 1.0 data types.
+      </p>
+      
+      
+      <p>XPath itself provides no sorting capability. You can therefore specify a sort order in which you want
+         the results of an expression returned. This is done by nominating another expression, via the <code>setSortKey</code>
+         method: this second expression is applied to each item in the result sequence, and its value determines
+         the position of that item in the sorted result order.
+      </p>
+      
+      
+      <p>You can call methods directly on the <code>NodeInfo</code> object to get information about a node: for
+         example <code>getDisplayName()</code> gets the name of the node in a form suitable for display, and
+         <code>getStringValue()</code> gets the string value of the node, as defined in the XPath data model. You
+         can also use the node as the context node for evaluation of subsequent expressions, by calling the
+         method <code>setContextNode</code> on the <code>XPathEvaluator</code> object.
+      </p>
+      
+      
+      <p>It is also possible to prepare an XPath expression for subsequent execution, using the 
+         <code>createExpression()</code> method
+         on the <code>XPathEvaluator</code> class. This is worthwhile where the same expression is to be executed repeatedly.
+         The compiled expression is represented by an instance of the class
+         <code>net.sf.saxon.xpath.XPathExpression</code>,
+         and it can be executed repeatedly, with different context nodes. The compiled expression can
+         only be used with documents that were constructed using the same NamePool (which will be the
+         case if the default NamePool is used throughout)
+      </p>
+      
+      
+      <p>A compiled expression can reference XPath variables; the values of these variables must be supplied
+         before the expression is evaluated, and can be different each time it is evaluated. To do this you will
+         need access to the <code>StandaloneContext</code> object used by the <code>XPathEvaluator</code>: you
+         can get this by calling <code>getStaticContext</code> and casting the result to a <code>StandaloneContext</code>.
+         Before compiling
+         an expression that uses variables, the variables it uses must be declared using the <code>declareVariable()</code> method
+         on the <code>StandaloneContext</code> class. This method returns a <code>Variable</code> object, whose
+         <code>setValue()</code> method can be used to set a value for the variable before the expression is
+         evaluated.
+      </p>
+      
+      
+      <p>The <code>StandaloneContext</code> object is also needed if the XPath expression uses namespaces (which
+         it will need to, if the source document itself uses namespaces). Before compiling or evaluating an
+         XPath expression that uses namespace prefixes, the namespace must be declared. You can do this explicitly
+         using the <code>declareNamespace()</code> method on the <code>StandaloneContext</code> object. 
+         Alternatively, you can use the <code>setNamespaces()</code> method, which declares all the namespaces
+         that are in-scope for a given node in the source document.
+         Certain namespaces are predeclared with their conventional prefixes: the XSLT namespace (xsl),
+         the XML namespace (xml), the XML Schema namespace (xs), and the Saxon namespace (saxon). 
+      </p>
+      
+      
+      <p>All the core XPath functions are available, with the exception of the <code>document</code> function.
+         The XSLT-specific functions, such as <code>key</code> and <code>generate-id</code>, are not available.
+         You can call Java extension functions by binding a namespace to the Java class (for example, 
+         <code>java:java.lang.Double</code>). You can also call Saxon and EXSLT extension functions using their
+         normal namespace - with the exception of a small number of Saxon extension functions, such as
+         <code>saxon:evaluate</code> and <code>saxon:serialize</code>, which work only in an XSLT context.
+      </p>
+      
+      
+      
+      <p>The design principle of this API is to minimize the number of Saxon classes that need to be used.
+         Apart from the <code>NodeInfo</code> interface, which is needed when manipulating Saxon trees, only the four classes
+         XPathProcessor, XPathExpression, StandaloneContext, and XPathException are needed. 
+         For convenience, these classes are all in the <code>net.sf.saxon.xpath</code> package.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="expressions.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="nodeinfo.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="58"
+   name=""
+   committed-date="2005-02-28T22:13:41.106920Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   revision="58"/>
+<entry
+   name="org"
+   kind="dir"/>
+</wc-entries>

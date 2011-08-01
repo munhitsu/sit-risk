@@ -1,0 +1,120 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--conformance/schema
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Conformance with XML Schema 1.0</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Conformance with XML Schema 1.0">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>Conformance with XML Schema 1.0</h1>
+      
+      
+      <p>The schema-aware version of the Saxon product (Saxon-SA) 
+         includes an almost complete implementation of XML Schema 1.0. This version of the product
+         is available from <a href="http://www.saxonica.com/" target="_blank" class="bodylink">Saxonica Limited</a>.
+      </p>
+      
+      
+      <p>Known limitations include the following:</p>
+      
+      
+      <ul>
+         
+         <li>
+            <p><code>xs:NOTATION</code> is not supported, either as a schema component or as a data type.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p><code>xs:redefine</code> is supported only in the case where it does not change the namespace
+               of the redefined components.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>QNames are not supported as default values, nor as fixed values. (They are supported as enumeration values)</p>
+         </li>
+         
+         
+         <li>
+            <p>Validation against list or union data types including <code>xs:QName</code> as one of the
+               component types is not supported.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Default or fixed values specified for an element whose type is a complex type with complex content are
+               ignored when validating instance documents.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Facets are evaluated according to XPath rules rather than XML Schema rules. For example, the pattern
+               syntax allows the extended syntax permitted in the XPath <code>matches()</code> function, and comparisons
+               against facets such as <code>minInclusive</code> and <code>maxInclusive</code> follow the XPath semantics
+               for the <code>lt</code> and <code>gt</code> operators. This may be slightly different when comparing values such as dates,
+               times, and durations.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Uniqueness and key/keyref constraints are implemented only where the keys are atomic values (that is, they are not
+               implemented for list-valued elements or attributes). Also, where element values participate in such constraints 
+               they must not be interleaved with comments or processing instructions. When evaluating these constraints,
+               equality of values is assessed according to XPath rules rather than XML Schema rules. This means, for example,
+               that a decimal and a double can be equal to each other, which is never the case under the XML Schema rules.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>ID and IDREF constraints are checked only for values typed as xs:ID, xs:IDREF, or xs:IDREFS. They are not checked
+               for types derived from these base types.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Saxon implements schema processing only to the extent required for XPath, XSLT, and XQuery processing. This
+               means that PSVI properties beyond those required for the XPath data model are not provided. It also means that
+               validation errors are fatal, they do not result in a PSVI that indicates the validation outcome for individual nodes.
+            </p>
+         </li>
+         
+      </ul>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="schema.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="other.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

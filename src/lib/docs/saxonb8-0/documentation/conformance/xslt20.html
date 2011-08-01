@@ -1,0 +1,152 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--conformance/xslt20
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: XSLT 2.0 conformance</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: XSLT 2.0 conformance">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>XSLT 2.0 conformance</h1>
+      
+      
+      <p>This release of Saxon
+         implements many facilities defined in the draft XSLT 2.0 specification. This implementation
+         is not yet complete, though most features defined in the working draft of 12 November 2003 are available. Some
+         minor changes agreed by the Working Group since that publication have also been implemented.
+      </p>
+      
+      
+      <p>Saxon-B 8.0 acts as a <i>Basic XSLT Processor</i>,
+         while Saxon-SA 8.0 acts as a <i>Schema-Aware XSLT Processor</i>. The distinction is that a Basic XSLT Processor
+         does not allow schemas to be imported and does not support validation of source or result documents or reference
+         to user-defined types. These correspond to the two conformance levels defined in the XSLT 2.0 specification.
+      </p>
+      
+      
+      <p>The XSLT 2.0 specification defines two optional conformance features, the serialization feature and
+         the backwards compatibility feature. These optional features are implemented in both Saxon variants.
+      </p>
+      
+      
+      <p>Known restrictions, relative to the conformance rules for a basic XSLT processor,
+         include the following:
+      </p>
+      
+      
+      <ul>
+         
+         
+         <li>
+            <p>The new <code>xsl:output</code> option  <code>normalize-unicode</code>
+               is not implemented.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The <code>xhtml</code> output method does not follow all the rules for XHTML formatting in
+               the serialization specification.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>If <code>key()</code> is called in a match pattern, the argument must be a string literal.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The semantics of patterns when applied to nodes in non-document trees are not yet properly
+               implemented.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The <code>xsl:perform-sort</code> element must currently have a <code>select</code> attribute and empty
+               content (apart from the xsl:sort elements themselves).
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>When the source document is supplied as a pre-built tree (in any format), Saxon strips whitespace
+               text nodes as requested by the stylesheet, but takes no account of any <code>xml:space</code>
+               attributes present in the tree.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The ability for <code>xsl:key</code> and <code>xsl:sort</code> to contain a sequence
+               constructor is not implemented
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Copying a document node (using <code>xsl:copy</code> or <code>xsl:copy-of</code>) copies
+               the children of the document node (as in XSLT 1.0), not the document node itself.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>The error codes defined in the specification are not used.</p>
+         </li>
+         
+         
+         <li>
+            <p>The rule that in forwards compatibility mode, an optional attribute should be ignored if its value
+               is not one of the values that is allowed for the attribute, is not implemented. (At any rate, it is not implemented
+               for all such cases).
+            </p>
+         </li>
+         
+      </ul>
+      
+      
+      <p>In the schema-aware XSLT processor, the following restrictions apply:</p>
+      
+      
+      <ul>
+         
+         <li>
+            <p>The <code>type</code> attribute of <code>xsl:document</code>, <code>xsl:result-document</code>,
+               and instructions that copy document nodes, is not implemented.
+            </p>
+         </li>
+         
+         
+      </ul>
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="xslt20.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="xpath20.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

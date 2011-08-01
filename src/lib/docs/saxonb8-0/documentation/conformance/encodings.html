@@ -1,0 +1,58 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--conformance/encodings
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Character Encodings Supported</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Character Encodings Supported">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>Character Encodings Supported</h1>
+      
+      
+      <p>The encodings supported on input depend entirely on your choice of XML parser.</p>
+      
+      
+      <p>On output, any encoding supported by the Java VM may be used.</p>
+      
+      
+      <p>There are some differences between the character encodings supported by the old <code>java.io</code> package
+         and the new <code>java.nio</code> package. If the requested encoding is not supported by the <code>java.nio</code> package, then
+         all non-ASCII characters will be represented using numeric character references. If the encoding is
+         not supported by the <code>java.io</code> package, then Saxon will revert to using UTF-8 as the actual output
+         encoding. A list of the character encodings
+         supported in the <code>java.nio</code> package can be obtained by using the command 
+         <code>java net.sf.saxon.charcode.CharacterSetFactory</code>,
+         with no parameters.
+      </p> 
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="encodings.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="collation-uri.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

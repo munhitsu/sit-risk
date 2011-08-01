@@ -1,0 +1,80 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--index/installation
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Installation</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Installation">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>Installation</h1>
+      
+      
+      <p><span class="highlight">Please see the file <a class="bodylink" href="javascript:topage('changes', 'intro')">changes.html</a> for
+            details of all changes in this release.</span></p>
+      
+      
+      <p>Installation of Saxon simply involves unzipping the supplied download file into a
+         suitable directory. The procedure is the same for the Standard product and the Schema-Aware
+         product. The two products can co-exist in the same directory or in different directories.
+      </p>
+      
+      
+      <p>One of the files that will be created in this directory is the principal JAR file. This is
+         <b>saxon8.jar</b> in the case of Saxon-B, <b>saxon8sa.jar</b> in the case of Saxon-SA.
+         There are additional JAR files to support optional features including the JDOM interface and the SQL
+         interface. When running Saxon, the principal JAR file should be on the class path. The class path
+         is normally represented by an environment variable named CLASSPATH: see your Java documentation
+         for details. Note that the JAR file itself (not the directory that contains it) should be named on the class path.
+      </p>
+      
+      
+      <p>The open-source Saxon-B distribution also includes source code. The modules included in the source code are
+         also used, without modification, in the schema-aware product. Source code for the additional components of the
+         schema-aware Saxon-SA product is not provided.
+      </p>
+      
+      
+      <p>Saxon no longer includes a built-in XML parser: by default it uses the XML parser supplied with
+         the Java VM. But you can use it with a different XML
+         parser if you wish. To do this from the command line, specify the required parser using the
+         -x or -y options; from the Java API, set the name of the parser class as an attribute of
+         the <code>TransformerFactory</code> or <code>Configuration</code> object.
+      </p>
+      
+      
+      <p>User documentation, covering both the XSLT and Java interfaces, is included in the download in the form
+         of extensive <code>javadoc</code> specifications. Be sure to read the package summaries, which give an overview
+         in the form of a user guide.
+      </p>
+      
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="installation.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

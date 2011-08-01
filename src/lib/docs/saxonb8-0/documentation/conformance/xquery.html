@@ -1,0 +1,107 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--conformance/xquery
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: XQuery 1.0 Conformance</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: XQuery 1.0 Conformance">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>XQuery 1.0 Conformance</h1>
+      
+      
+      
+      <p>This release of Saxon implements
+         the full XQuery 1.0 grammar as defined in the working draft of 12 November 2003
+         The <a href="../conformance/xpath20.html" target="_self" class="bodylink">restrictions</a> noted with respect to XPath 2.0 apply equally to Saxon's support for
+         XQuery 1.0.
+      </p>
+      
+      
+      <p>The current XQuery specification does not define multiple conformance levels. However, it is widely expected
+         that as with XSLT 2.0, there will be a conformance level that requires XML Schema support and another that does not.
+         Saxon-SA aims to support the schema-aware conformance level when it is defined, Saxon-B the basic conformance level.
+      </p>
+      
+      
+      <p>Restrictions in Saxon compared with the November 2003 draft of XQuery 1.0 include the
+         following:
+      </p>
+      
+      
+      <ul>
+         
+         
+         <li>
+            <p>User-defined functions must have namespace-prefixed names.</p>
+         </li>
+         
+         
+         <li>
+            <p>The <code>as</code> clause in variable declarations (both global variables, and <code>for</code>
+               and <code>let</code> variables) follow the function calling
+               rules, rather than the stricter rules that apply to variables. That is, the supplied value is converted to the declared
+               type in three ways: atomization of nodes, casting of untyped atomic, and numeric promotion.
+            </p>
+         </li> 
+         
+         
+         <li>
+            <p>The <code>as</code> clause in <code>some</code> and <code>every</code> expressions is not
+               implemented.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Computed namespace constructors are not implemented.</p>
+         </li>
+         
+         
+         <li>
+            <p>The rules that determine which namespace nodes should be added to a constructed element
+               are not fully implemented. (The main difference is that in some cases, constructed nodes 
+               inherit the namespace of their new parent, which is wrong according to the spec.)
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>If a document node appears in the sequence constructor for an element node, no error is
+               produced. Instead the children of the document node are copied to the new element, as in XSLT.
+            </p>
+         </li>
+         
+         
+         
+      </ul>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="xquery.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="schema.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

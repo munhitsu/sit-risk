@@ -1,0 +1,218 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--extensibility/functions
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Writing extension functions</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Writing extension functions">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      
+      <h1>Writing extension functions</h1>
+      
+      
+      <p>An extension function is invoked using a name such as <code>prefix:localname()</code>.
+         The prefix must
+         be the prefix associated with a namespace declaration that is in scope. 
+      </p>
+      
+      
+      <p>Extension functions must be implemented in Java.</p>
+      
+      
+      <p><b>The command line option -TJ is useful for debugging the loading of Java
+            extensions. It gives detailed information about the methods that are examined for
+            a possible match.</b></p>
+      
+      
+      
+      <p>These functions do not need to be declared. The URI for the
+         namespace identifies the Java class where the external function will be found.
+         The namespace URI should be "java:" followed by the fully-qualified class name
+         (for example <code>xmlns:date="java:java.util.Date"</code>). 
+         The class must be on the classpath. 
+      </p>
+      
+      
+      
+      <p><i>For compatibility with other products and previous Saxon releases, Saxon (in XSLT only) supports
+            certain other formats of URI. The URI may be a string containing a "/", 
+            in which the fully-qualified class name appears after the final "/".
+            (for example <code>xmlns:date="http://www.jclark.com/xt/java/java.util.Date"</code>). The part of
+            the URI before the final "/" is immaterial. 
+            The format <code>xmlns:date="java.util.Date"</code> is also supported.</i></p>
+      
+      
+      <p>The Saxon namespace URI "http://saxon.sf.net/" is recognised as a special case, and causes the
+         function to be loaded from the class <code>net.sf.saxon.functions.Extensions</code>. 
+         This class name can be specified explicitly if you prefer.
+      </p>
+      
+      
+      <p>There are three cases to consider: static methods, constructors, and instance-level methods. In
+         addition, a public field in a class is treated as if it were a zero-argument method, so public static
+         fields can be accessed in the same way as public static methods, and public instance-level fields
+         in the same way as instance-level methods.
+      </p>
+      
+      
+      <p><b>Static methods</b> can be called directly.
+         The localname of the function must match the name of a public static method in this class. The names
+         match if they contain the same characters, excluding hyphens and forcing any character that follows
+         a hyphen to upper-case. For example the XPath function call <code>to-string()</code> matches the Java method
+         <code>toString()</code>; but the function call can also be written as <code>toString()</code> if you prefer.
+      </p>
+      
+      
+      <p>If there are several methods in the class that match the localname, and that have the correct number
+         of arguments, then the system attempts
+         to find the one that is the best fit to the types of the supplied arguments: for example if the 
+         call is <code>f(1,2)</code> then a method with two <code>int</code> arguments will be preferred
+         to one with two <code>String</code>
+         arguments. The rules for deciding between methods are quite complex. Essentially, for each candidate method,
+         Saxon calculates the "distance" between the types of the supplied arguments and the Java class of the 
+         corresponding method in the method's
+         signature, using a set of tables given below. For example, the distance between the XPath data type "boolean"
+         and the Java class "boolean" is very small, while the distance between an XPath string and a Java boolean
+         is much larger. If there is one candidate method where the distances of all arguments are less-than-or-equal-to
+         the distances computed for other candidate methods, and the distance of at least one argument is smaller,
+         then that method is chosen. 
+         If there are several methods with the same name and the correct number of arguments, but none is
+         preferable to the others under these rules, an error is reported: the message indicates that there is
+         more than one method that matches the function call.
+      </p>
+      
+      
+      
+      
+      <p>For example (in XSLT):</p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>&lt;xsl:value-of select="math:sqrt($arg)"
+   xmlns:math="java:java.lang.Math"/&gt;
+</code></pre></div>
+      
+      
+      <p>This will invoke the static method <code>java.lang.Math#sqrt()</code>, applying it to the value of the variable
+         <code>$arg</code>, and copying the value of the square root of <code>$arg</code> to the result tree.
+      </p>
+      
+      
+      <p>Similarly (in XQuery):</p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>&lt;a xmlns:double="java:java.lang.Double"/&gt; {double:MAX_VALUE()} &lt;a&gt;
+</code></pre></div>
+      
+      
+      <p>This will output the value of the static field <code>java.lang.Double#MAX_VALUE</code>. (In practice, it
+         is better to declare the namespace in the query prolog, because it will then not be copied to the result tree.)
+      </p>
+      
+      
+      <p><b>Java constructors</b> are called by using the function named <code>new()</code>. 
+         If there are several constructors, then again
+         the system tries to find the one that is the best fit, according to the types of the supplied arguments. The result
+         of calling <code>new()</code> is an XPath value whose type is denoted by a QName whose local name
+         is the actual Java class (for example <code>java.sql.Connection</code> or <code>java.util.List</code>)
+         and whose namespace
+         URI is <code>http://saxon.sf.net/java-type</code> (conventional prefix <code>class</code>). Any '$'
+         characters in the class name are replaced by '-' characters in the QName.
+         The only things that can be done with a wrapped Java Object
+         are to assign it to a variable, to pass it to an extension function, and to convert it to a string, number,
+         or boolean, using the rules given below.
+      </p>
+      
+      
+      <p><b>Instance-level methods</b> (that is, non-static methods)
+         are called by supplying an extra first argument of type Java Object which is the
+         object on which the method is to be invoked. A Java Object is usually created by calling an extension
+         function (e.g. a constructor) that returns an object; it may also be passed to the style sheet as the
+         value of a global parameter. Matching of method names is done as for static methods.
+         If there are several methods in the class that match the localname, the system again tries to
+         find the one that is the best fit, according to the types of the supplied arguments.
+      </p>
+      
+      
+      <p>For example, the following XSLT stylesheet prints the date and time. (In XSLT 2.0, of course,
+         this no longer requires extension functions, but the example is still valid.)
+      </p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>
+&lt;xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:date="java:java.util.Date"&gt;
+
+&lt;xsl:template match="/"&gt;
+  &lt;html&gt;
+    &lt;xsl:if test="function-available('date:to-string') and function-available('date:new')"&gt;
+      &lt;p&gt;&lt;xsl:value-of select="date:to-string(date:new())"/&gt;&lt;/p&gt;
+    &lt;/xsl:if&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+      
+      
+      <p>The equivalent in XQuery is:</p>
+      
+      
+      <div class="codeblock" style="border: solid thin; background-color: #B1CCC7; padding: 2px"><pre><code>
+declare namespace date="java:java.util.Date";
+&lt;p&gt;{date:to-string(date:new())}&lt;/p&gt;
+</code></pre></div>
+      
+      
+      
+      
+      
+      
+      <p>A Java method called as an extension function may have an extra first argument of
+         class <code>net.sf.saxon.expr.XPathContext</code>.
+         This argument is not
+         supplied by the calling XPath or XQuery code, but by Saxon itself. 
+         The <code>XPathContext</code> object provides methods to access many
+         internal Saxon resources, the most useful being <code>getContextItem()</code> which returns the context item
+         from the dynamic context. The XPathContext object is not available with constructors.
+      </p>
+      
+      
+      <p>If any exceptions are thrown by the method, or if a matching method cannot be found,
+         processing of the stylesheet will be abandoned. If the tracing option has been set (-T) on the
+         command line, a full stack trace will be output. The exception will be wrapped in a
+         <code>TransformerException</code> and passed to any user-specified <code>ErrorListener</code> object, 
+         so the <code>ErrorListener</code> can also produce extra diagnostics.
+      </p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="functions.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="converting-args.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

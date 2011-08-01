@@ -1,0 +1,168 @@
+
+/* 
+Text blue: #3D5B96
+Dark blue: #c1cede
+Mid blue: #e4eef0 
+Light blue: #f6fffb
+mid green #B1CCC7
+rust #96433D
+*/
+
+.bgnd {
+	margin-top:0;
+	margin-left:0;
+	}
+
+.main {
+	background: #f6fffb;
+	margin-top:0px;
+	margin-left:0px;
+	margin-bottom:20px;
+	SCROLLBAR-FACE-COLOR: #c1cede; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #e4eef0; 
+	SCROLLBAR-SHADOW-COLOR: #e4eef0; 
+	SCROLLBAR-ARROW-COLOR: #f6fffb; 
+	SCROLLBAR-BASE-COLOR: #e4eef0;
+}
+
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+/* used for in body links */
+
+a.bodylink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+
+/* used for back/next buttons */
+
+.formbutton {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: 500;
+	color : #3D5B96;
+	border-top : 1px solid #3D5B96;
+	border-right : 1px solid #3D5B96;
+	border-bottom : 1px solid #3D5B96;
+	border-left : 1px solid #3D5B96;
+	background-color: #B1CCC7;
+}
+
+.formfield {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: 500;
+	color : #3D5B96;
+	border-top : 1px solid #3D5B96;
+	border-right : 1px solid #3D5B96;
+	border-bottom : 1px solid #3D5B96;
+	border-left : 1px solid #3D5B96;
+	background-color: #e4eef0;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12pt;
+}
+
+.form {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+	}
+
+
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 12pt;
+}
+
+.inpage {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style:normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12pt;
+}
+
+
+.faqtext {
+	padding-top:10px;
+	padding-right:15px;
+	padding-bottom:10px;
+	line-height: 22px;
+	}
+
+.scrolltext {
+	padding-top:10px;
+	padding-right:15px;
+	padding-bottom:10px;
+	}
+
+.subhead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom : 1px dashed #3D5B96;
+	}
+
+.parahead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: bold;
+	text-decoration: none;
+	padding-left:5px;
+	padding-right:5px;
+	border-left: 1px solid #3D5B96;
+	border-bottom : 1px solid #3D5B96;
+	}
+
+ul {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: normal;
+	color: #3D5B96;
+	font-weight: normal;
+
+}

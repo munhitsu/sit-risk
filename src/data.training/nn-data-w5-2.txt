@@ -1,0 +1,9 @@
+w_eozynofilia;w_eozynofilia_bezw;w_ecp;w_eozynofile;w_eozynofile_zdegranulowane;w_fev;w_procent_zmiennosci_po_beta;w_swiszczacy_oddech;w_kaszel;w_dusznosc;w_swiad_spojowek;w_lzawienie_oczu;w_wyciek_z_nosa;w_zatkanie_nosa;w_napady_kichania;w_wysypki_skorne;w_czestosc_infekcji_w_roku;w_ig_e_swoiste_trawy;w_ig_e_swoiste_trawy_klasa;w_max_stezenie_szczepionki;w_dawka_szczepionki;w_czas_trwania_objawow;w_czas_trwania_max_objawow;w_suma_objawow;w_suma_lekow
+8;800;80.9;37;2;95;28;1;2;2;1;0;1;2;1;0;1;33.5;3.5;5000;5000;57;27;12;17
+3;144;57.1;24;2;91;11;0;1;0;1;0;1;0;1;0;1;33.5;3.5;5000;5000;52;16;4;10
+4;244;28.5;3;2;120;5;0;1;0;0;0;1;0;0;0;2;33.5;3.5;6147.727272727272727273;2952.380952380952380952;48;22;2;4
+0;594.965517241379310345;31.5;25;2;99;27;1;2;0;1;0;2;1;1;0;9;33.5;3.5;2500;250;60;32;8;20
+17;1054;28.8;37;2;101;36;0;0;0;1;0;2;1;1;0;3;33.5;3.5;10000;10000;47;19;5;9
+21;2730;74.7;20;2;75;15;1;1;0;1;0;2;1;1;0;3;33.5;3.5;10000;2000;30;20;7;20
+13;1573;42.3;80;3;111;0;0;0;0;1;1;2;0;1;0;5;33.5;3.5;2500;750;35;20;5;14
+8;496;96.3;16;2;97;20;0;1;0;1;0;2;1;1;0;3;33.5;3.5;10000;2000;30;19;6;13

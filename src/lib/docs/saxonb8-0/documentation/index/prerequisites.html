@@ -1,0 +1,85 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--index/prerequisites
+		Generated at 2004-06-08T13:52:21.759Z-->
+      <title>Saxonica: XSLT and XQuery Processing: Prerequisites</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: Prerequisites">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../" + section + "_menu.html";
+                parent.frames['content'].location="../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      
+      <h1>Prerequisites</h1>
+      
+      
+      <p>The following software must be installed separately, it is not included with the Saxon download.</p>
+      
+      
+      <ul>
+         
+         <li>
+            <p>To run Saxon you need at least a Java VM, and preferably a Java development environment. 
+               Saxon 8.0 requires JDK 1.4; this means it will no longer work with the Microsoft Java VM.
+            </p>
+         </li>
+         
+         
+         <li>
+            <p>Saxon has an option to work with a source tree constructed using
+               <a href="http://www.jdom.org/" target="_blank" class="bodylink">JDOM</a>. Saxon 8.0 is validated with
+               JDOM beta 10; it probably works with JDOM beta 9, but may not work with earlier releases.
+            </p>
+         </li> 
+         
+      </ul>
+      
+      
+      <p>Saxon has been tested successfully in the past with a wide variety of XML parsers including
+         Xerces, Lark, SUN Project X, Crimson, Piccolo, Oracle XML, xerces, xml4j, and xp. Use of a SAX2-compliant
+         parser is now mandatory. All the relevant classes must be installed on your Java CLASSPATH.
+      </p>
+      
+      
+      <p>Earlier releases of Saxon included a version of the &AElig;lfred XML parser. This is no longer bundled with the
+         Saxon distribution, because JDK 1.4 now includes an XML parser as standard, but the &AElig;lfred XML parser remains
+         available as a separate download from
+         <a href="http://sourceforge.net/project/showfiles.php?group_id=29872&amp;package_id=66578" target="_blank" class="bodylink">the Saxon site at SourceForge.</a></p>
+      
+      
+      <p>Saxon's DOM interface has been tested with the Crimson parser included as standard in
+         Sun's JDK 1.4 platform and with the Xerces 2.5.0 DOM implementation.
+      </p>
+      
+      
+      <p>Because Saxon is run from the command line, you might find it useful (under Microsoft Windows)
+         to have a text editor
+         with better command-line support than the standard DOS window. I use <a href="http://www.jedit.org" target="_blank" class="bodylink">jEdit</a>, 
+         which is an open source product with a wide-selection of optional plug-ins, including one for editing XQuery.
+      </p>
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a class="nav" href="prerequisites.html" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="download.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

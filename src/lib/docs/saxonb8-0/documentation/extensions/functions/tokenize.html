@@ -1,0 +1,57 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+      <!--extensions/functions/tokenize
+		Generated at 8 June 2004 at 13:52-->
+      <title>Saxonica: XSLT and XQuery Processing: saxon:tokenize()</title>
+      <meta name="coverage" content="Worldwide">
+      <meta name="copyright" content="Copyright Saxonica Ltd">
+      <meta name="title" content="Saxonica: XSLT and XQuery Processing: saxon:tokenize()">
+      <meta name="robots" content="noindex,nofollow">
+      <link rel="stylesheet" href="../../saxondocs.css" type="text/css"><script type="text/javascript" language="JavaScript">
+            function topage(section, page) {
+                parent.frames['menu'].location="../../" + section + "_menu.html";
+                parent.frames['content'].location="../../" + section + "/" + page + ".html";
+            }
+            function tosubpage(section, page, subpage) {
+                parent.frames['menu'].location="../../" + section + "_menu.html";
+                parent.frames['content'].location="../../" + section + "/" + page + "/" + subpage + ".html";
+            }
+      </script></head>
+   <body class="main">
+      <h1>saxon:tokenize()</h1>
+      
+      
+      <p><b>tokenize(string-1, string-2?)</b></p>
+      
+      
+      <p>The first argument is converted to a string and is treated as a list of separated tokens.
+         If the second argument is present, any character in string-2 is taken as a delimiter character,
+         and any sequence of delimiter characters is taken as a token separator. If the second argument
+         is omitted, any sequence of whitespace is taken as a token separator: or to put it another way,
+         the default for string-2 is '&amp;#x09;&amp;#x0A;&amp;#x0D;&amp;#x20;'.<br> 
+         A new sequence is constructed containing one string for each token; if the string is empty or
+         contains a separator only then the result will be empty. 
+         For example tokenize("a cup of tea") generates a sequence of four strings:
+         ( "a", "cup", "of", "tea").
+      </p>
+      
+      <p><i>This function is deprecated, since the same effect can be achieved
+            using the <code>tokenize()</code> function in the standard library.</i></p>
+      
+      
+      <table width="100%">
+         <tr>
+            <td>
+               <p align="left"><a href="tokenize.html" class="nav" target="_blank">Expand</a></p>
+            </td>
+            <td>
+               <p align="right"><a class="nav" href="../functions.html">Up</a>&nbsp;&nbsp;<a class="nav" href="typeannotation.html">Next</a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,129 @@
+<pola>
+  <pole codename="numer_porzadkowy" id="1" wywiad="1" />
+  <pole codename="grupa_lub_kontrola" id="2" wywiad="2" />
+  <pole codename="grupa_pacjentow" id="3" wywiad="3" />
+  <pole codename="podzial_na_4_grupy" id="4" wywiad="4" />
+  <pole codename="plec" id="5" wywiad="5" />
+  <pole codename="wiek_w_latach" id="6" wywiad="6" />
+  <pole codename="miesiac_urodzenia" id="7" wywiad="7" />
+  <pole codename="rozpoznanie" id="8" wywiad="8" />
+  <pole codename="natezenie_astmy_rozpoznanie" id="9" wywiad="9" />
+  <pole codename="na_co_pierwsze_chorowal" id="10" wywiad="10" />
+  <pole codename="w_czas_choroby_do_it_skora" id="11" w1="11" />
+  <pole codename="w_czas_choroby_do_it_nos" id="12" w1="12" />
+  <pole codename="w_czas_choroby_do_it_astma" id="13" w1="13" />
+  <pole codename="w_obciazajacy_wywiad_rodzinny" id="14" w1="14" />
+  <pole codename="obciazenie_rodzinne" id="15" wywiad="15" />
+  <pole codename="w_dlugosc_choroby_przed_it" id="16" w1="16" />
+  <pole codename="w_phadiatop" id="17" w1="17" />
+  <pole codename="w_leukocytoza" id="18" w1="18" w2="61" w3="103" w4="149" w5="195" w6="241" w7="283" wk="398" />
+  <pole codename="w_eozynofilia" id="19" w1="19" w2="62" w3="104" w4="150" w5="196" w6="242" w7="284" wk="399" />
+  <pole codename="w_eozynofilia_bezw" id="20" w1="20" w2="63" w3="105" w4="151" w5="197" w6="243" w7="285" wk="400" />
+  <pole codename="w_ecp" id="21" w1="21" w2="64" w3="106" w4="152" w5="198" w6="244" w7="286" wk="401" />
+  <pole codename="w_liczba_pol_naplywowych" id="22" w1="22" w2="65" w3="107" w4="153" w5="199" w6="245" w7="287" wk="402" />
+  <pole codename="w_liczba_pol_nablonkowych" id="23" w1="23" w2="66" w3="108" w4="154" w5="200" w6="246" w7="288" wk="403" />
+  <pole codename="w_neutrofile" id="24" w1="24" w2="67" w3="109" w4="155" w5="201" w6="247" w7="289" wk="404" />
+  <pole codename="w_eozynofile" id="25" w1="25" w2="68" w3="110" w4="156" w5="202" w6="248" w7="290" wk="405" />
+  <pole codename="w_eozynofile_zdegranulowane" id="26" w1="26" w2="69" w3="111" w4="157" w5="203" w6="249" w7="291" wk="406" />
+  <pole codename="w_limfocyty" id="27" w1="27" w2="70" w3="112" w4="158" w5="204" w6="250" w7="292" wk="407" />
+  <pole codename="w_komorki_kubkowe" id="28" w1="28" w2="71" w3="113" w4="159" w5="205" w6="251" w7="293" wk="408" />
+  <pole codename="w_komorki_przypodstawne" id="29" w1="29" w2="72" w3="114" w4="160" w5="206" w6="252" w7="294" wk="409" />
+  <pole codename="w_sposob_zluszczania" id="30" w1="30" w2="73" w3="115" w4="161" w5="207" w6="253" w7="295" wk="410" />
+  <pole codename="w_fev" id="31" w1="31" w2="74" w3="116" w4="162" w5="208" w6="254" w7="296" wk="411" />
+  <pole codename="w_fef_5-75" id="32" w1="32" w2="75" w3="117" w4="163" w5="209" w6="255" w7="297" wk="412" />
+  <pole codename="w_pefr" id="33" w1="33" w2="76" w3="118" w4="164" w5="210" w6="256" w7="298" wk="413" />
+  <pole codename="w_procent_zmiennosci_po_beta" id="34" w1="34" w2="77" w3="119" w4="165" w5="211" w6="257" wk="414" />
+  <pole codename="w_poprawa_kodowana" id="35" w1="35" />
+  <pole codename="w_roznica_miedzy_objawami" id="36" w1="36" />
+  <pole codename="w_swiszczacy_oddech" id="37" w2="37" w3="83" w4="125" w5="171" w6="217" w7="263" wk="374" />
+  <pole codename="w_kaszel" id="38" w2="38" w3="84" w4="126" w5="172" w6="218" w7="264" wk="375" />
+  <pole codename="w_dusznosc" id="39" w2="39" w3="85" w4="127" w5="173" w6="219" w7="265" wk="376" />
+  <pole codename="w_swiad_spojowek" id="40" w2="40" w3="86" w4="128" w5="174" w6="220" w7="266" wk="377" />
+  <pole codename="w_lzawienie_oczu" id="41" w2="41" w3="87" w4="129" w5="175" w6="221" w7="267" wk="378" />
+  <pole codename="w_wyciek_z_nosa" id="42" w2="42" w3="88" w4="130" w5="176" w6="222" w7="268" wk="379" />
+  <pole codename="w_zatkanie_nosa" id="43" w2="43" w3="89" w4="131" w5="177" w6="223" w7="269" wk="380" />
+  <pole codename="w_napady_kichania" id="44" w2="44" w3="90" w4="132" w5="178" w6="224" w7="420" wk="381" />
+  <pole codename="w_wysypki_skorne" id="45" w2="45" w3="91" w4="133" w5="179" w6="225" wk="382" />
+  <pole codename="w_czestosc_infekcji_w_roku" id="46" w2="46" w3="92" w4="134" w5="180" w6="226" wk="383" />
+  <pole codename="w_hospitalizacja__w_tyg" id="47" w2="47" />
+  <pole codename="w_antyhistaminiki" id="48" w2="48" w3="93" w4="136" w5="182" w6="228" w7="270" wk="385" />
+  <pole codename="w_metyloksantyny" id="49" w2="49" w3="94" w4="137" w5="183" w6="229" w7="271" wk="386" />
+  <pole codename="w_sterydy_ogolnie" id="50" w2="50" w3="95" w4="138" w5="184" w6="230" w7="272" wk="387" />
+  <pole codename="w_sterydy_wziewnie" id="51" w2="51" w3="96" w4="139" w5="185" w6="231" w7="273" wk="388" />
+  <pole codename="w_sterydy_donosowo" id="52" w2="52" w3="97" w4="140" w5="186" w6="232" w7="274" wk="389" />
+  <pole codename="w_kromoglikany_wziewnie" id="53" w2="53" w3="98" w4="141" w5="187" w6="233" w7="275" wk="390" />
+  <pole codename="w_kromoglikany_donosowo" id="54" w2="54" w3="99" w4="142" w5="188" w6="234" w7="276" wk="391" />
+  <pole codename="w_kromoglikany_dospojowkowo" id="55" w2="55" w3="100" w4="143" w5="189" w6="235" w7="277" wk="392" />
+  <pole codename="w_beta-mimetyki" id="56" w2="56" w3="101" w4="144" w5="190" w6="236" w7="278" wk="393" />
+  <pole codename="w_betadrin_miejscowo" id="57" w2="57" w3="102" w4="145" w5="191" w6="237" w7="279" wk="394" />
+  <pole codename="w_ig_e_calkowite" id="58" w2="58" w4="146" w5="192" w6="238" w7="280" wk="395" />
+  <pole codename="w_ig_e_swoiste_trawy" id="59" w2="59" w4="147" w5="193" w6="239" w7="281" wk="396" />
+  <pole codename="w_ig_e_swoiste_trawy_klasa" id="60" w2="60" w4="148" w5="194" w6="240" w7="282" wk="397" />
+  <pole codename="w_max_stezenie_szczepionki" id="61" w2="78" w3="120" w4="166" w5="212" w6="258" wk="415" />
+  <pole codename="w_dawka_szczepionki" id="62" w2="79" w3="121" w4="167" w5="213" w6="259" wk="416" />
+  <pole codename="w_reakcje_poszczepienne" id="63" w2="80" w3="122" w4="168" w5="214" w6="260" wk="417" />
+  <pole codename="w_czas_trwania_objawow" id="64" w2="81" w3="123" w4="169" w5="215" w6="261" w7="340" wk="418" />
+  <pole codename="w_czas_trwania_max_objawow" id="65" w2="82" w3="124" w4="170" w5="216" w6="262" w7="341" wk="419" />
+  <pole codename="w_hospitalizacja_tyg" id="66" w4="135" w5="181" w6="227" wk="384" />
+  <pole codename="pokwitanie" id="67" other="299" />
+  <pole codename="testy_drzewa" id="68" testy_1="300" testy_2="308" testy_3="316" />
+  <pole codename="testy_trawy_i" id="69" testy_1="301" testy_2="309" testy_3="317" />
+  <pole codename="testy_trawy_ii" id="70" testy_1="302" testy_2="310" testy_3="318" />
+  <pole codename="testy_chwasty" id="71" testy_1="303" testy_2="311" testy_3="319" />
+  <pole codename="testy_plesnie" id="72" testy_1="304" testy_2="312" testy_3="320" />
+  <pole codename="testy_kurz" id="73" testy_1="305" testy_2="313" testy_3="321" />
+  <pole codename="testy_dermpt" id="74" testy_1="306" testy_2="314" testy_3="322" />
+  <pole codename="testy_dermfa" id="75" testy_1="307" testy_2="315" testy_3="323" />
+  <pole codename="w_suma_objawow" id="76" w2="324" w3="325" w4="326" w5="327" w6="328" w7="329" />
+  <pole codename="w_suma_lekow" id="77" w2="330" w3="331" w4="332" w5="333" w6="334" w7="335" />
+  <pole codename="poprawa_po_2_latach_odczul" id="78" other="336" />
+  <pole codename="poprawa_po_3_latach_odczul" id="79" other="337" />
+  <pole codename="poprawa_po_4_latach_odczul" id="80" other="338" />
+  <pole codename="poprawa_po_5_latach_odczul" id="81" other="339" />
+  <pole codename="w_procent_zmiennoci_po_beta" id="82" w7="342" />
+  <pole codename="kontrola_dodatnia_1" id="83" other="343" />
+  <pole codename="kontrola_dodatnia_2" id="84" other="344" />
+  <pole codename="kontrola_dodatnia_3" id="85" other="345" />
+  <pole codename="roznica_sumy_objawow_po_4_l" id="86" other="346" />
+  <pole codename="roznica_sumy_objawow_po_3_l" id="87" other="347" />
+  <pole codename="roznica_sumy_objawow_po_2_l" id="88" other="348" />
+  <pole codename="roznica_sumy_objawow_po_roku" id="89" other="349" />
+  <pole codename="procent_rozn_sumy_objawow_po_4_l" id="90" other="350" />
+  <pole codename="procent_rozn_sumy_objawow_po_3_l" id="91" other="351" />
+  <pole codename="procent_rozn_sumy_objawow_po_2_l" id="92" other="352" />
+  <pole codename="procent_rozn_sumy_objawow_po_roku" id="93" other="353" />
+  <pole codename="rozn_sumy_lekow_po_4_l" id="94" other="354" />
+  <pole codename="rozn_sumy_lekow_po_3_l" id="95" other="355" />
+  <pole codename="rozn_sumy_lekow_po_2_l" id="96" other="356" />
+  <pole codename="rozn_sumy_lekoww_po_roku" id="97" other="357" />
+  <pole codename="procent_rozn_sumy_lekow_po_4_l" id="98" other="358" />
+  <pole codename="procent_rozn_sumy_lekow_po_3_l" id="99" other="359" />
+  <pole codename="procent_rozn_sumy_lekow_po_2_l" id="100" other="360" />
+  <pole codename="procent_rozn_sumy_lekow_po_roku" id="101" other="361" />
+  <pole codename="ide_c1" id="102" other="362" />
+  <pole codename="ige_c2" id="103" other="363" />
+  <pole codename="ige_c3" id="104" other="364" />
+  <pole codename="ige_swtr1" id="105" other="365" />
+  <pole codename="ige_swtr2" id="106" other="366" />
+  <pole codename="ige_swtr3" id="107" other="367" />
+  <pole codename="ige_swtr_klasa_1" id="108" other="368" />
+  <pole codename="ige_swtr_klasa_2" id="109" other="369" />
+  <pole codename="ige_swtr_klasa_3" id="110" other="370" />
+  <pole codename="ige_calk_ponad_norme" id="111" other="371" />
+  <pole codename="ige_swtr_kl_wieksze_rowne_2" id="112" other="372" />
+  <pole codename="odczulani_przez_4_lub_5_lat" id="113" other="373" />
+  <pole codename="pokwitanie2" id="114" other="421" />
+  <pole codename="igec1_lub_igesw1" id="115" other="423" />
+  <pole codename="igec2_lub_igesw2" id="116" other="424" />
+  <pole codename="igec3_lub_igesw3" id="117" other="425" />
+  <pole codename="igesw1_lub_igec1" id="118" other="426" />
+  <pole codename="igesw2_lub_igec2" id="119" other="427" />
+  <pole codename="igesw3_lub_igec3" id="120" other="428" />
+  <pole codename="procent_poprawa_po_4" id="121" other="429" />
+  <pole codename="procent_poprawa_po_3" id="122" other="430" />
+  <pole codename="procent_poprawa_po_2" id="123" other="431" />
+  <pole codename="procent_poprawa_po_roku" id="124" other="432" />
+  <pole codename="kryt_igec_800" id="125" other="433" />
+  <pole codename="kryt_igesw_3" id="126" other="434" />
+  <pole codename="kryt_eobzw_700" id="127" other="435" />
+</pola>

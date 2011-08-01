@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="56"
+   name=""
+   committed-date="2005-02-28T00:48:51.782928Z"
+   url="http://koty.homeip.net/svn/mgr/jim/src/org/jim/parser/complete"
+   last-author="beda"
+   kind="dir"
+   uuid="a205a5ce-7fed-0310-8f5e-89b6df3217f8"
+   schedule="delete"
+   revision="57"/>
+<entry
+   committed-rev="56"
+   name="CompleteAdding.java"
+   text-time="2005-02-28T22:20:34.578125Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="45276d6370e354251e5c1ce28ef76518"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.484375Z"/>
+<entry
+   committed-rev="56"
+   name="CompleteUsingSplines.java"
+   text-time="2005-02-28T22:20:34.625000Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="776c8dd176dfc0a74e5ab57785ad6f25"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.515625Z"/>
+<entry
+   committed-rev="56"
+   name="CompletePacjent.java"
+   text-time="2005-02-28T22:20:34.656250Z"
+   committed-date="2005-02-28T00:48:51.782928Z"
+   checksum="34c5c8c3218c28a935be91ebcb63caa1"
+   last-author="beda"
+   kind="file"
+   prop-time="2005-02-28T22:20:34.531250Z"/>
+</wc-entries>

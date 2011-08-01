@@ -1,0 +1,11 @@
+ciagle wyjsciowe:
+43 
+
+ciagle wejsciowe:
+3-4 7-9 11-17 
+
+skater wejsciowe:
+2 5-6 10 
+
+zmienna selekcyjna:
+1
